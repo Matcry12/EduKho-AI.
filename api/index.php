@@ -1,42 +1,31 @@
 <?php
 
 /**
- * Vercel Serverless Entry Point for Laravel
- *
- * Handles all incoming requests on Vercel's serverless PHP runtime.
- * The vercel-php runtime automatically runs composer install.
+ * Vercel Serverless Entry Point for Laravel 11
  */
 
 // Set writable paths for serverless environment
-$_ENV['VIEW_COMPILED_PATH'] = '/tmp/views';
-$_ENV['LOG_CHANNEL'] = 'stderr';
-$_ENV['SESSION_DRIVER'] = 'cookie';
-$_ENV['CACHE_STORE'] = 'array';
+putenv('VIEW_COMPILED_PATH=/tmp/views');
+putenv('LOG_CHANNEL=stderr');
+putenv('SESSION_DRIVER=cookie');
+putenv('CACHE_STORE=array');
 
 // Ensure tmp directories exist
-if (!is_dir('/tmp/views')) {
-    mkdir('/tmp/views', 0755, true);
-}
-if (!is_dir('/tmp/cache')) {
-    mkdir('/tmp/cache', 0755, true);
-}
-if (!is_dir('/tmp/sessions')) {
-    mkdir('/tmp/sessions', 0755, true);
+foreach (['/tmp/views', '/tmp/cache', '/tmp/sessions', '/tmp/storage/framework/views', '/tmp/storage/framework/cache', '/tmp/storage/framework/sessions', '/tmp/storage/logs'] as $dir) {
+    if (!is_dir($dir)) {
+        mkdir($dir, 0755, true);
+    }
 }
 
 require __DIR__ . '/../vendor/autoload.php';
 
+// Laravel 11 bootstrap style
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
 // Override storage path for serverless
 $app->useStoragePath('/tmp/storage');
 
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
+// Handle the request using Laravel 11's method
+$app->handleRequest(
+    \Illuminate\Http\Request::capture()
 );
-
-$response->send();
-
-$kernel->terminate($request, $response);
