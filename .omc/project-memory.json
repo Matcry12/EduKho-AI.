@@ -190,6 +190,18 @@
   },
   "hotPaths": [
     {
+      "path": "Dockerfile",
+      "accessCount": 7,
+      "lastAccessed": 1773988461769,
+      "type": "file"
+    },
+    {
+      "path": "render.yaml",
+      "accessCount": 5,
+      "lastAccessed": 1773988450176,
+      "type": "file"
+    },
+    {
       "path": "app/Http/Controllers/AiChatController.php",
       "accessCount": 4,
       "lastAccessed": 1773974859999,
@@ -220,12 +232,6 @@
       "type": "file"
     },
     {
-      "path": "Dockerfile",
-      "accessCount": 4,
-      "lastAccessed": 1773987869515,
-      "type": "file"
-    },
-    {
       "path": "config/services.php",
       "accessCount": 3,
       "lastAccessed": 1773974722993,
@@ -253,12 +259,6 @@
       "path": "package.json",
       "accessCount": 2,
       "lastAccessed": 1773974060604,
-      "type": "file"
-    },
-    {
-      "path": "render.yaml",
-      "accessCount": 2,
-      "lastAccessed": 1773974786303,
       "type": "file"
     },
     {
@@ -385,6 +385,12 @@
       "path": "fly.toml",
       "accessCount": 1,
       "lastAccessed": 1773979504714,
+      "type": "file"
+    },
+    {
+      "path": "public/.htaccess",
+      "accessCount": 1,
+      "lastAccessed": 1773988482283,
       "type": "file"
     }
   ],
