@@ -5,7 +5,7 @@
 /storage/*.key
 /storage/logs
 /storage/framework
-/vendor
+#/vendor
 /vendor_icloud_backup
 /vendor_dataless_backup_*
 .env
@@ -27,3 +27,4 @@ yarn-error.log
 /.idea
 /.vscode
 /.phpunit.cache
+.vercel
