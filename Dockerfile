@@ -54,6 +54,10 @@ php artisan migrate --force\n\
 apache2-foreground' > /usr/local/bin/start.sh \
     && chmod +x /usr/local/bin/start.sh
 
-EXPOSE 80
+# Configure Apache to listen on port 8080 (Fly.io requirement)
+RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
+RUN sed -i 's/:80/:8080/' /etc/apache2/sites-available/000-default.conf
+
+EXPOSE 8080
 
 CMD ["/usr/local/bin/start.sh"]
