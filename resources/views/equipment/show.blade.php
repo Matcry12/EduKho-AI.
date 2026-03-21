@@ -32,34 +32,34 @@
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up" style="animation-delay: 80ms;">
         <div class="lg:col-span-2 space-y-6">
             <article class="filter-panel">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.equipment.info') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.equipment.info') }}</h3>
                 <dl class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.subject') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $equipment->category_subject }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.subject') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $equipment->category_subject }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.grade') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $equipment->grade_level }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.grade') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $equipment->grade_level }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.unit') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $equipment->unit }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.unit') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $equipment->unit }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.unit_price') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ number_format($equipment->price ?? 0) }} VND</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.unit_price') }}</dt>
+                        <dd class="font-medium text-inherit">{{ number_format($equipment->price ?? 0) }} VND</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.origin') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $equipment->origin ?? __('messages.equipment.origin_unknown') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.origin') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $equipment->origin ?? __('messages.equipment.origin_unknown') }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.type') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $equipment->is_digital ? __('messages.equipment.type_digital') : __('messages.equipment.type_physical') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.type') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $equipment->is_digital ? __('messages.equipment.type_digital') : __('messages.equipment.type_physical') }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.security_level') }}</dt>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.security_level') }}</dt>
                         <dd>
                             @if($equipment->isHighSecurity())
                             <span class="table-pill bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">{{ __('messages.equipment.high_security') }}</span>
@@ -69,15 +69,15 @@
                         </dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.is_fixed_asset') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $equipment->is_fixed_asset ? __('messages.yes') : __('messages.no') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.equipment.is_fixed_asset') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $equipment->is_fixed_asset ? __('messages.yes') : __('messages.no') }}</dd>
                     </div>
                 </dl>
 
                 @if($equipment->description)
                 <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-                    <dt class="text-sm text-gray-500 dark:text-gray-400 mb-2">{{ __('messages.description') }}</dt>
-                    <dd class="text-gray-700 dark:text-gray-300">{{ $equipment->description }}</dd>
+                    <dt class="text-sm text-inherit mb-2">{{ __('messages.description') }}</dt>
+                    <dd class="text-inherit">{{ $equipment->description }}</dd>
                 </div>
                 @endif
 
@@ -96,7 +96,7 @@
             @if(!$equipment->is_digital)
             <article class="data-table-wrap">
                 <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.equipment.item_list') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit">{{ __('messages.equipment.item_list') }}</h3>
                     <span class="table-pill bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">{{ $equipment->items->count() }} {{ __('messages.equipment.records') }}</span>
                 </div>
                 <div class="overflow-x-auto">
@@ -112,7 +112,7 @@
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                             @foreach($equipment->items as $item)
                             <tr>
-                                <td class="font-semibold text-gray-900 dark:text-gray-100">{{ $item->specific_code }}</td>
+                                <td class="font-semibold text-inherit">{{ $item->specific_code }}</td>
                                 <td>{{ $item->room?->name ?? __('messages.equipment.no_room') }}</td>
                                 <td>{{ $item->year_acquired }}</td>
                                 <td>
@@ -143,10 +143,10 @@
         <aside class="space-y-6">
             <article class="card">
                 <div class="card-body">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.equipment.qr_code') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.equipment.qr_code') }}</h3>
                     <div class="text-center">
                         <img src="{{ route('equipment.qr', $equipment) }}" alt="QR Code" class="w-32 h-32 mx-auto border border-gray-200 dark:border-gray-700 rounded-lg">
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">{{ __('messages.equipment.scan_qr') }}</p>
+                        <p class="text-xs text-inherit mt-2">{{ __('messages.equipment.scan_qr') }}</p>
                         <a href="{{ route('equipment.qr.print', $equipment) }}" target="_blank" class="btn-secondary mt-3 w-full">{{ __('messages.equipment.print_qr') }}</a>
                     </div>
                 </div>
@@ -154,26 +154,26 @@
 
             <article class="card">
                 <div class="card-body">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.equipment.inventory_status') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.equipment.inventory_status') }}</h3>
                     <div class="text-center">
                         <div class="font-display text-4xl font-bold text-teal-700 dark:text-teal-300">{{ $equipment->availableCount() }}</div>
-                        <div class="text-gray-500 dark:text-gray-400">/ {{ $equipment->totalCount() }} {{ __('messages.equipment.available') }}</div>
+                        <div class="text-inherit">/ {{ $equipment->totalCount() }} {{ __('messages.equipment.available') }}</div>
                     </div>
                     <div class="mt-4 space-y-2">
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.ready') }}</span>
+                            <span class="text-inherit">{{ __('messages.equipment.ready') }}</span>
                             <span class="font-semibold text-emerald-600 dark:text-emerald-300">{{ $equipment->items->where('status', 'available')->count() }}</span>
                         </div>
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.borrowed') }}</span>
+                            <span class="text-inherit">{{ __('messages.equipment.borrowed') }}</span>
                             <span class="font-semibold text-cyan-600 dark:text-cyan-300">{{ $equipment->items->where('status', 'borrowed')->count() }}</span>
                         </div>
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.maintenance') }}</span>
+                            <span class="text-inherit">{{ __('messages.equipment.maintenance') }}</span>
                             <span class="font-semibold text-amber-600 dark:text-amber-300">{{ $equipment->items->where('status', 'maintenance')->count() }}</span>
                         </div>
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.broken_lost') }}</span>
+                            <span class="text-inherit">{{ __('messages.equipment.broken_lost') }}</span>
                             <span class="font-semibold text-rose-600 dark:text-rose-300">{{ $equipment->items->whereIn('status', ['broken', 'lost'])->count() }}</span>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
             @if(auth()->user()->isAdmin() && $equipment->inventoryLogs->count() > 0)
             <article class="card">
                 <div class="card-body">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.equipment.inventory_history') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.equipment.inventory_history') }}</h3>
                     <div class="space-y-3">
                         @foreach($equipment->inventoryLogs->take(5) as $log)
                         <div class="flex items-center justify-between text-sm">
@@ -191,9 +191,9 @@
                                 <span class="font-semibold {{ $log->type === 'increase' ? 'text-emerald-600 dark:text-emerald-300' : 'text-rose-600 dark:text-rose-300' }}">
                                     {{ $log->type === 'increase' ? '+' : '-' }}{{ $log->quantity }}
                                 </span>
-                                <span class="text-gray-500 dark:text-gray-400">{{ $log->reason }}</span>
+                                <span class="text-inherit">{{ $log->reason }}</span>
                             </div>
-                            <span class="text-gray-400 dark:text-gray-500 text-xs">{{ $log->action_date->format('d/m/Y') }}</span>
+                            <span class="text-inherit text-xs">{{ $log->action_date->format('d/m/Y') }}</span>
                         </div>
                         @endforeach
                     </div>
@@ -205,23 +205,23 @@
             @php $depreciation = $equipment->getDepreciation(); @endphp
             <article class="card">
                 <div class="card-body">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.equipment.depreciation') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.equipment.depreciation') }}</h3>
                     <div class="space-y-3">
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.purchase_price') }}</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">{{ number_format($depreciation['purchase_price']) }} VND</span>
+                            <span class="text-inherit">{{ __('messages.equipment.purchase_price') }}</span>
+                            <span class="font-medium text-inherit">{{ number_format($depreciation['purchase_price']) }} VND</span>
                         </div>
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.current_value') }}</span>
+                            <span class="text-inherit">{{ __('messages.equipment.current_value') }}</span>
                             <span class="font-medium text-teal-700 dark:text-teal-300">{{ number_format($depreciation['current_value']) }} VND</span>
                         </div>
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.accumulated_depreciation') }}</span>
+                            <span class="text-inherit">{{ __('messages.equipment.accumulated_depreciation') }}</span>
                             <span class="font-medium text-rose-600 dark:text-rose-300">{{ number_format($depreciation['accumulated_depreciation']) }} VND</span>
                         </div>
                         <div class="flex justify-between text-sm">
-                            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.usage_time') }}</span>
-                            <span class="font-medium text-gray-900 dark:text-gray-100">{{ $depreciation['years_used'] }} / {{ $depreciation['useful_life_years'] }} {{ __('messages.equipment.years') }}</span>
+                            <span class="text-inherit">{{ __('messages.equipment.usage_time') }}</span>
+                            <span class="font-medium text-inherit">{{ $depreciation['years_used'] }} / {{ $depreciation['useful_life_years'] }} {{ __('messages.equipment.years') }}</span>
                         </div>
                         @if($depreciation['is_fully_depreciated'])
                         <div class="mt-3 rounded-xl px-3 py-2 text-center text-sm font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">

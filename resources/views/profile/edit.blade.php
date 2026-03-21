@@ -29,7 +29,7 @@
             <div>
                 <label for="email" class="form-label">{{ __('messages.profile.email') }}</label>
                 <input type="email" id="email" value="{{ $user->email }}" class="form-input bg-gray-100 dark:bg-gray-800" disabled>
-                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">{{ __('messages.profile.email_readonly') }}</p>
+                <p class="mt-1 text-xs text-inherit">{{ __('messages.profile.email_readonly') }}</p>
             </div>
 
             <div>
@@ -43,7 +43,7 @@
             <div>
                 <label class="form-label">{{ __('messages.profile.department') }}</label>
                 <input type="text" value="{{ $user->department?->name ?? __('messages.profile.not_assigned') }}" class="form-input bg-gray-100 dark:bg-gray-800" disabled>
-                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">{{ __('messages.profile.department_note') }}</p>
+                <p class="mt-1 text-xs text-inherit">{{ __('messages.profile.department_note') }}</p>
             </div>
 
             <div class="flex justify-end gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">

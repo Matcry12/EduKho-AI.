@@ -6,7 +6,7 @@
 <div class="max-w-3xl mx-auto">
     <div class="card">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.maintenance.create') }}</h2>
+            <h2 class="text-lg font-semibold text-inherit">{{ __('messages.maintenance.create') }}</h2>
         </div>
 
         <form method="POST" action="{{ route('admin.maintenance.store') }}" class="p-6">
@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <a href="{{ route('admin.maintenance.index') }}" class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">{{ __('messages.cancel') }}</a>
+                    <a href="{{ route('admin.maintenance.index') }}" class="text-sm text-gray-900 hover:text-inherit dark:hover:text-gray-200">{{ __('messages.cancel') }}</a>
                     <button type="submit" class="btn-primary">{{ __('messages.maintenance.schedule') }}</button>
                 </div>
             </div>

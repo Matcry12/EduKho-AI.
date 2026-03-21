@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1773973158109,
+  "lastScanned": 1774085382392,
   "projectRoot": "/home/matcry/Documents/EduKho-AI.",
   "techStack": {
     "languages": [
@@ -67,14 +67,14 @@
       "path": "app",
       "purpose": "Application code",
       "fileCount": 0,
-      "lastAccessed": 1773973158099,
+      "lastAccessed": 1774085382383,
       "keyFiles": []
     },
     "bootstrap": {
       "path": "bootstrap",
       "purpose": null,
       "fileCount": 2,
-      "lastAccessed": 1773973158099,
+      "lastAccessed": 1774085382383,
       "keyFiles": [
         "app.php",
         "providers.php"
@@ -84,7 +84,7 @@
       "path": "config",
       "purpose": "Configuration files",
       "fileCount": 8,
-      "lastAccessed": 1773973158105,
+      "lastAccessed": 1774085382389,
       "keyFiles": [
         "app.php",
         "auth.php",
@@ -97,14 +97,14 @@
       "path": "database",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1773973158106,
+      "lastAccessed": 1774085382389,
       "keyFiles": []
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
-      "fileCount": 1,
-      "lastAccessed": 1773973158107,
+      "fileCount": 2,
+      "lastAccessed": 1774085382390,
       "keyFiles": [
         "index.php"
       ]
@@ -113,14 +113,14 @@
       "path": "resources",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1773973158107,
+      "lastAccessed": 1774085382390,
       "keyFiles": []
     },
     "routes": {
       "path": "routes",
       "purpose": "Route handlers",
       "fileCount": 3,
-      "lastAccessed": 1773973158107,
+      "lastAccessed": 1774085382391,
       "keyFiles": [
         "api.php",
         "console.php",
@@ -131,27 +131,43 @@
       "path": "scripts",
       "purpose": "Build/utility scripts",
       "fileCount": 3,
-      "lastAccessed": 1773973158108,
+      "lastAccessed": 1774085382391,
       "keyFiles": [
         "dev-doctor.sh",
         "dev-up.sh",
         "ensure-local-files.sh"
       ]
     },
+    "storage": {
+      "path": "storage",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1774085382391,
+      "keyFiles": []
+    },
     "tests": {
       "path": "tests",
       "purpose": "Test files",
       "fileCount": 1,
-      "lastAccessed": 1773973158108,
+      "lastAccessed": 1774085382391,
       "keyFiles": [
         "TestCase.php"
+      ]
+    },
+    "vendor": {
+      "path": "vendor",
+      "purpose": "Third-party code",
+      "fileCount": 1,
+      "lastAccessed": 1774085382391,
+      "keyFiles": [
+        "autoload.php"
       ]
     },
     "app/Models": {
       "path": "app/Models",
       "purpose": "Data models",
       "fileCount": 18,
-      "lastAccessed": 1773973158108,
+      "lastAccessed": 1774085382391,
       "keyFiles": [
         "ActivityLog.php",
         "AiChatLog.php",
@@ -162,7 +178,7 @@
       "path": "app/Services",
       "purpose": "Business logic services",
       "fileCount": 3,
-      "lastAccessed": 1773973158108,
+      "lastAccessed": 1774085382391,
       "keyFiles": [
         "ActivityLogger.php",
         "DepreciationService.php",
@@ -173,224 +189,119 @@
       "path": "database/migrations",
       "purpose": "Database migrations",
       "fileCount": 25,
-      "lastAccessed": 1773973158108,
+      "lastAccessed": 1774085382392,
       "keyFiles": [
         "2025_01_01_000001_create_departments_table.php",
         "2025_01_01_000002_create_users_table.php",
         "2025_01_01_000003_create_rooms_table.php"
       ]
     },
+    "public/build": {
+      "path": "public/build",
+      "purpose": "Build output",
+      "fileCount": 1,
+      "lastAccessed": 1774085382392,
+      "keyFiles": [
+        "manifest.json"
+      ]
+    },
     "resources/views": {
       "path": "resources/views",
       "purpose": "View templates",
       "fileCount": 0,
-      "lastAccessed": 1773973158109,
+      "lastAccessed": 1774085382392,
       "keyFiles": []
+    },
+    "storage/app": {
+      "path": "storage/app",
+      "purpose": "Application code",
+      "fileCount": 0,
+      "lastAccessed": 1774085382392,
+      "keyFiles": []
+    },
+    "vendor/bin": {
+      "path": "vendor/bin",
+      "purpose": "Executable scripts",
+      "fileCount": 5,
+      "lastAccessed": 1774085382392,
+      "keyFiles": [
+        "carbon",
+        "patch-type-declarations",
+        "php-parse"
+      ]
     }
   },
   "hotPaths": [
     {
-      "path": "Dockerfile",
-      "accessCount": 7,
-      "lastAccessed": 1773988461769,
-      "type": "file"
-    },
-    {
-      "path": "render.yaml",
-      "accessCount": 5,
-      "lastAccessed": 1773988450176,
-      "type": "file"
-    },
-    {
-      "path": "app/Http/Controllers/AiChatController.php",
-      "accessCount": 4,
-      "lastAccessed": 1773974859999,
-      "type": "file"
-    },
-    {
-      "path": "app/Http/Controllers/Api/AiChatApiController.php",
-      "accessCount": 4,
-      "lastAccessed": 1773974861628,
-      "type": "file"
-    },
-    {
-      "path": "vercel.json",
-      "accessCount": 4,
-      "lastAccessed": 1773977036665,
-      "type": "file"
-    },
-    {
-      "path": "api/index.php",
-      "accessCount": 4,
-      "lastAccessed": 1773978537523,
-      "type": "file"
-    },
-    {
-      "path": "composer.json",
-      "accessCount": 4,
-      "lastAccessed": 1773979073753,
-      "type": "file"
-    },
-    {
-      "path": "config/services.php",
-      "accessCount": 3,
-      "lastAccessed": 1773974722993,
-      "type": "file"
-    },
-    {
-      "path": ".env.example",
-      "accessCount": 3,
-      "lastAccessed": 1773974725435,
-      "type": "file"
-    },
-    {
       "path": "app/Providers/AppServiceProvider.php",
       "accessCount": 3,
-      "lastAccessed": 1773974861860,
+      "lastAccessed": 1774086335961,
       "type": "file"
     },
     {
-      "path": "database/migrations",
+      "path": "bootstrap/app.php",
       "accessCount": 3,
-      "lastAccessed": 1773978383255,
-      "type": "directory"
-    },
-    {
-      "path": "package.json",
-      "accessCount": 2,
-      "lastAccessed": 1773974060604,
+      "lastAccessed": 1774086346794,
       "type": "file"
     },
     {
       "path": ".env",
       "accessCount": 2,
-      "lastAccessed": 1773978332465,
+      "lastAccessed": 1774086340268,
       "type": "file"
     },
     {
-      "path": "database/migrations/2025_01_01_000019_create_reservations_table.php",
-      "accessCount": 2,
-      "lastAccessed": 1773978372142,
-      "type": "file"
-    },
-    {
-      "path": "README.md",
+      "path": "app/Services/AI/GeminiService.php",
       "accessCount": 1,
-      "lastAccessed": 1773973460508,
+      "lastAccessed": 1774085549594,
       "type": "file"
     },
     {
-      "path": "docker-compose.yml",
+      "path": "routes/api.php",
       "accessCount": 1,
-      "lastAccessed": 1773973460585,
+      "lastAccessed": 1774085816324,
       "type": "file"
     },
     {
-      "path": "app/Models/User.php",
+      "path": "config/services.php",
       "accessCount": 1,
-      "lastAccessed": 1773973466582,
-      "type": "file"
-    },
-    {
-      "path": "database/migrations/2025_01_01_000002_create_users_table.php",
-      "accessCount": 1,
-      "lastAccessed": 1773973466764,
-      "type": "file"
-    },
-    {
-      "path": "TECHNICAL_SPECIFICATION.md",
-      "accessCount": 1,
-      "lastAccessed": 1773973467746,
+      "lastAccessed": 1774085817213,
       "type": "file"
     },
     {
       "path": "routes/web.php",
       "accessCount": 1,
-      "lastAccessed": 1773973470307,
+      "lastAccessed": 1774085817267,
       "type": "file"
     },
     {
-      "path": "vite.config.js",
+      "path": "resources/views/ai/chat.blade.php",
       "accessCount": 1,
-      "lastAccessed": 1773973478080,
+      "lastAccessed": 1774085817491,
       "type": "file"
     },
     {
-      "path": "config/database.php",
+      "path": "config/sanctum.php",
       "accessCount": 1,
-      "lastAccessed": 1773974060535,
+      "lastAccessed": 1774085823485,
       "type": "file"
     },
     {
-      "path": "bootstrap/app.php",
+      "path": "app/Http/Controllers/AiChatController.php",
       "accessCount": 1,
-      "lastAccessed": 1773974085981,
-      "type": "file"
-    },
-    {
-      "path": ".dockerignore",
-      "accessCount": 1,
-      "lastAccessed": 1773974105661,
-      "type": "file"
-    },
-    {
-      "path": "app",
-      "accessCount": 1,
-      "lastAccessed": 1773974637918,
-      "type": "directory"
-    },
-    {
-      "path": "config",
-      "accessCount": 1,
-      "lastAccessed": 1773974638425,
-      "type": "directory"
-    },
-    {
-      "path": "app/Services/AI/GeminiService.php",
-      "accessCount": 1,
-      "lastAccessed": 1773974645228,
-      "type": "file"
-    },
-    {
-      "path": "app/Services/AI/SystemPrompt.php",
-      "accessCount": 1,
-      "lastAccessed": 1773974653415,
-      "type": "file"
-    },
-    {
-      "path": "app/Services/AI/GroqService.php",
-      "accessCount": 1,
-      "lastAccessed": 1773974703339,
+      "lastAccessed": 1774085827433,
       "type": "file"
     },
     {
       "path": "app/Services/AI/AiServiceManager.php",
       "accessCount": 1,
-      "lastAccessed": 1773974712618,
+      "lastAccessed": 1774085832660,
       "type": "file"
     },
     {
-      "path": "app/Providers",
+      "path": "app/Services/AI/GroqService.php",
       "accessCount": 1,
-      "lastAccessed": 1773974770665,
-      "type": "directory"
-    },
-    {
-      "path": "public/index.php",
-      "accessCount": 1,
-      "lastAccessed": 1773975787046,
-      "type": "file"
-    },
-    {
-      "path": "fly.toml",
-      "accessCount": 1,
-      "lastAccessed": 1773979504714,
-      "type": "file"
-    },
-    {
-      "path": "public/.htaccess",
-      "accessCount": 1,
-      "lastAccessed": 1773988482283,
+      "lastAccessed": 1774086305521,
       "type": "file"
     }
   ],

@@ -67,11 +67,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <label class="flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-800/40 px-4 py-3">
                     <input type="checkbox" name="is_digital" value="1" {{ old('is_digital') ? 'checked' : '' }} class="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500">
-                    <span class="text-sm font-medium text-gray-700 dark:text-gray-200">{{ __('messages.equipment.type_digital') }}</span>
+                    <span class="text-sm font-medium text-inherit">{{ __('messages.equipment.type_digital') }}</span>
                 </label>
                 <label class="flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-800/40 px-4 py-3">
                     <input type="checkbox" name="is_fixed_asset" value="1" {{ old('is_fixed_asset') ? 'checked' : '' }} class="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500">
-                    <span class="text-sm font-medium text-gray-700 dark:text-gray-200">{{ __('messages.equipment.is_fixed_asset') }}</span>
+                    <span class="text-sm font-medium text-inherit">{{ __('messages.equipment.is_fixed_asset') }}</span>
                 </label>
             </div>
 
@@ -82,8 +82,8 @@
 
             <div class="pt-6 border-t border-gray-200 dark:border-gray-700 space-y-4">
                 <div>
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.equipment.initial_import') }}</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.initial_description') }}</p>
+                    <h3 class="font-display text-lg font-semibold text-inherit">{{ __('messages.equipment.initial_import') }}</h3>
+                    <p class="text-sm text-inherit">{{ __('messages.equipment.initial_description') }}</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

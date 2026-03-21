@@ -15,11 +15,11 @@
     <section class="filter-panel animate-fade-in-up" style="animation-delay: 80ms;">
         <form method="GET" class="flex flex-wrap gap-3">
             <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('messages.transfer.from_date') }}</label>
+                <label class="block text-sm font-medium text-inherit mb-1">{{ __('messages.transfer.from_date') }}</label>
                 <input type="date" name="from_date" value="{{ request('from_date') }}" class="form-input">
             </div>
             <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('messages.transfer.to_date') }}</label>
+                <label class="block text-sm font-medium text-inherit mb-1">{{ __('messages.transfer.to_date') }}</label>
                 <input type="date" name="to_date" value="{{ request('to_date') }}" class="form-input">
             </div>
             <div class="flex items-end">
@@ -45,19 +45,19 @@
                     @forelse($transfers as $transfer)
                     <tr>
                         <td>
-                            <div class="font-medium text-gray-900 dark:text-gray-100">{{ $transfer->equipmentItem->equipment->name }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{ $transfer->equipmentItem->specific_code }}</div>
+                            <div class="font-medium text-inherit">{{ $transfer->equipmentItem->equipment->name }}</div>
+                            <div class="text-sm text-inherit">{{ $transfer->equipmentItem->specific_code }}</div>
                         </td>
-                        <td class="text-gray-500 dark:text-gray-400">
+                        <td class="text-inherit">
                             {{ $transfer->fromRoom?->name ?? __('messages.transfer.not_assigned') }}
                         </td>
-                        <td class="text-gray-500 dark:text-gray-400">
+                        <td class="text-inherit">
                             {{ $transfer->toRoom?->name ?? __('messages.transfer.not_assigned') }}
                         </td>
-                        <td class="text-gray-500 dark:text-gray-400">
+                        <td class="text-inherit">
                             {{ $transfer->transfer_date->format('d/m/Y') }}
                         </td>
-                        <td class="text-gray-500 dark:text-gray-400">
+                        <td class="text-inherit">
                             {{ $transfer->transferredBy->name }}
                         </td>
                         <td class="text-right">
@@ -67,7 +67,7 @@
                     @empty
                     <tr>
                         <td colspan="6" class="empty-state">
-                            <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="mx-auto h-12 w-12 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
                             </svg>
                             <p class="mt-2">{{ __('messages.transfer.no_transfers') }}</p>

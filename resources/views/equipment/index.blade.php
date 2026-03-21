@@ -60,18 +60,18 @@
             <div class="p-6">
                 <div class="flex items-start justify-between gap-3">
                     <div>
-                        <h3 class="font-display text-lg font-bold text-gray-900 dark:text-white">{{ $equipment->name }}</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">{{ __('messages.equipment.code') }}: {{ $equipment->base_code }}</p>
+                        <h3 class="font-display text-lg font-bold text-inherit">{{ $equipment->name }}</h3>
+                        <p class="text-sm text-inherit mt-1">{{ __('messages.equipment.code') }}: {{ $equipment->base_code }}</p>
                     </div>
                     @if($equipment->isHighSecurity())
                     <span class="table-pill bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">{{ __('messages.equipment.high_security') }}</span>
                     @endif
                 </div>
 
-                <div class="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <p><span class="font-semibold text-gray-800 dark:text-gray-200">{{ __('messages.equipment.subject') }}:</span> {{ $equipment->category_subject }}</p>
-                    <p><span class="font-semibold text-gray-800 dark:text-gray-200">{{ __('messages.equipment.grade') }}:</span> {{ $equipment->grade_level }}</p>
-                    <p><span class="font-semibold text-gray-800 dark:text-gray-200">{{ __('messages.equipment.unit') }}:</span> {{ $equipment->unit }}</p>
+                <div class="mt-4 space-y-2 text-sm text-inherit">
+                    <p><span class="font-semibold text-inherit">{{ __('messages.equipment.subject') }}:</span> {{ $equipment->category_subject }}</p>
+                    <p><span class="font-semibold text-inherit">{{ __('messages.equipment.grade') }}:</span> {{ $equipment->grade_level }}</p>
+                    <p><span class="font-semibold text-inherit">{{ __('messages.equipment.unit') }}:</span> {{ $equipment->unit }}</p>
                 </div>
 
                 <div class="mt-5 flex items-end justify-between gap-3">
@@ -79,7 +79,7 @@
                         <span class="font-display text-3xl font-bold {{ $equipment->isLowStock() ? 'text-rose-600 dark:text-rose-400' : 'text-teal-700 dark:text-teal-300' }}">
                             {{ $equipment->availableCount() }}
                         </span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">/ {{ $equipment->totalCount() }} {{ __('messages.equipment.available') }}</span>
+                        <span class="text-sm text-inherit">/ {{ $equipment->totalCount() }} {{ __('messages.equipment.available') }}</span>
                         @if($equipment->isLowStock())
                         <span class="ml-2 table-pill bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">{{ __('messages.equipment.low_stock') }}</span>
                         @endif

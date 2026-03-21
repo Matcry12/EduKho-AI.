@@ -66,21 +66,21 @@
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                     @forelse($reservations as $reservation)
                     <tr>
-                        <td class="font-semibold text-gray-900 dark:text-white">#{{ $reservation->id }}</td>
+                        <td class="font-semibold text-inherit">#{{ $reservation->id }}</td>
                         @if(auth()->user()->isAdmin())
                         <td>
-                            <div class="font-medium text-gray-900 dark:text-gray-100">{{ $reservation->user->name }}</div>
+                            <div class="font-medium text-inherit">{{ $reservation->user->name }}</div>
                         </td>
                         @endif
                         <td>
-                            <div class="font-medium text-gray-900 dark:text-gray-100">{{ $reservation->equipment->name }}</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ $reservation->equipment->base_code }}</div>
+                            <div class="font-medium text-inherit">{{ $reservation->equipment->name }}</div>
+                            <div class="text-xs text-inherit">{{ $reservation->equipment->base_code }}</div>
                         </td>
                         <td>{{ $reservation->quantity }} {{ $reservation->equipment->unit }}</td>
                         <td>
                             <div>{{ $reservation->reserved_date->format('d/m/Y') }}</div>
                             @if($reservation->period)
-                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ __('messages.borrow.period') }} {{ $reservation->period }}</div>
+                            <div class="text-xs text-inherit">{{ __('messages.borrow.period') }} {{ $reservation->period }}</div>
                             @endif
                         </td>
                         <td>
@@ -117,7 +117,7 @@
                     @empty
                     <tr>
                         <td colspan="{{ auth()->user()->isAdmin() ? 7 : 6 }}" class="empty-state">
-                            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="mx-auto h-12 w-12 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <p class="mt-2">{{ __('messages.reservation.no_reservations') }}</p>

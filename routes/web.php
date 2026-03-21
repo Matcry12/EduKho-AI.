@@ -60,7 +60,9 @@ Route::post('/logout', [AuthController::class, 'logout'])
 
 // Two-factor authentication challenge (during login)
 Route::get('/two-factor-challenge', [TwoFactorController::class, 'challenge'])->name('two-factor.challenge');
-Route::post('/two-factor-challenge', [TwoFactorController::class, 'verify'])->name('two-factor.verify');
+Route::post('/two-factor-challenge', [TwoFactorController::class, 'verify'])
+    ->middleware('throttle:two-factor')
+    ->name('two-factor.verify');
 
 // Authenticated routes
 Route::middleware('auth')->group(function () {

@@ -6,8 +6,8 @@
 <div class="max-w-4xl mx-auto space-y-6">
     <div class="flex justify-between items-start">
         <div>
-            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{{ __('messages.damage_report.title') }} #{{ $damageReport->id }}</h2>
-            <p class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.created_at') }} {{ $damageReport->created_at->format('d/m/Y H:i') }}</p>
+            <h2 class="text-2xl font-bold text-inherit">{{ __('messages.damage_report.title') }} #{{ $damageReport->id }}</h2>
+            <p class="text-inherit">{{ __('messages.damage_report.created_at') }} {{ $damageReport->created_at->format('d/m/Y H:i') }}</p>
         </div>
         <div class="flex space-x-2">
             @if($damageReport->status === 'reported')
@@ -45,10 +45,10 @@
                     </svg>
                     <span class="text-green-800 dark:text-green-200 font-medium">{{ __('messages.damage_report.resolved') }} - {{ $damageReport->resolved_at->format('d/m/Y') }}</span>
                 @else
-                    <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-gray-900 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
                     </svg>
-                    <span class="text-gray-800 dark:text-gray-200 font-medium">{{ __('messages.damage_report.written_off') }} - {{ $damageReport->resolved_at->format('d/m/Y') }}</span>
+                    <span class="text-inherit font-medium">{{ __('messages.damage_report.written_off') }} - {{ $damageReport->resolved_at->format('d/m/Y') }}</span>
                 @endif
             </div>
             <span class="px-3 py-1 text-sm rounded-full
@@ -65,18 +65,18 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Equipment Info -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-            <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{{ __('messages.damage_report.equipment') }}</h3>
+            <h3 class="text-lg font-semibold mb-4 text-inherit">{{ __('messages.damage_report.equipment') }}</h3>
             <dl class="space-y-3">
                 <div class="flex justify-between">
-                    <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.equipment_name') }}:</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $damageReport->equipmentItem->equipment->name }}</dd>
+                    <dt class="text-inherit">{{ __('messages.damage_report.equipment_name') }}:</dt>
+                    <dd class="font-medium text-inherit">{{ $damageReport->equipmentItem->equipment->name }}</dd>
                 </div>
                 <div class="flex justify-between">
-                    <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.item_code') }}:</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $damageReport->equipmentItem->specific_code }}</dd>
+                    <dt class="text-inherit">{{ __('messages.damage_report.item_code') }}:</dt>
+                    <dd class="font-medium text-inherit">{{ $damageReport->equipmentItem->specific_code }}</dd>
                 </div>
                 <div class="flex justify-between">
-                    <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.current_status') }}:</dt>
+                    <dt class="text-inherit">{{ __('messages.damage_report.current_status') }}:</dt>
                     <dd>
                         <span class="px-2 py-1 text-xs rounded-full
                             @if($damageReport->equipmentItem->status === 'available') bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300
@@ -94,29 +94,29 @@
 
         <!-- Incident Info -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-            <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{{ __('messages.damage_report.incident_info') }}</h3>
+            <h3 class="text-lg font-semibold mb-4 text-inherit">{{ __('messages.damage_report.incident_info') }}</h3>
             <dl class="space-y-3">
                 <div class="flex justify-between">
-                    <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.incident_date') }}:</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $damageReport->incident_date->format('d/m/Y') }}</dd>
+                    <dt class="text-inherit">{{ __('messages.damage_report.incident_date') }}:</dt>
+                    <dd class="font-medium text-inherit">{{ $damageReport->incident_date->format('d/m/Y') }}</dd>
                 </div>
                 <div class="flex justify-between">
-                    <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.reporter') }}:</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $damageReport->reporter->name }}</dd>
+                    <dt class="text-inherit">{{ __('messages.damage_report.reporter') }}:</dt>
+                    <dd class="font-medium text-inherit">{{ $damageReport->reporter->name }}</dd>
                 </div>
                 @if($damageReport->estimated_cost)
                 <div class="flex justify-between">
-                    <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.estimated_cost') }}:</dt>
+                    <dt class="text-inherit">{{ __('messages.damage_report.estimated_cost') }}:</dt>
                     <dd class="font-medium text-red-600 dark:text-red-400">{{ number_format($damageReport->estimated_cost) }} VND</dd>
                 </div>
                 @endif
                 @if($damageReport->borrowRecord)
                 <div class="flex justify-between">
-                    <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.related_borrow') }}:</dt>
+                    <dt class="text-inherit">{{ __('messages.damage_report.related_borrow') }}:</dt>
                     <dd>
                         <a href="{{ route('borrow.show', $damageReport->borrowRecord) }}"
                            class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300">#{{ $damageReport->borrowRecord->id }}</a>
-                        <span class="text-gray-500 dark:text-gray-400 text-sm">({{ $damageReport->borrowRecord->user->name }})</span>
+                        <span class="text-inherit text-sm">({{ $damageReport->borrowRecord->user->name }})</span>
                     </dd>
                 </div>
                 @endif
@@ -126,13 +126,13 @@
 
     <!-- Description -->
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-        <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{{ __('messages.damage_report.description') }}</h3>
-        <p class="text-gray-700 dark:text-gray-300 whitespace-pre-line">{{ $damageReport->description }}</p>
+        <h3 class="text-lg font-semibold mb-4 text-inherit">{{ __('messages.damage_report.description') }}</h3>
+        <p class="text-inherit whitespace-pre-line">{{ $damageReport->description }}</p>
 
         @if($damageReport->cause)
         <div class="mt-4 pt-4 border-t dark:border-gray-700">
-            <h4 class="font-medium text-gray-900 dark:text-white mb-2">{{ __('messages.damage_report.cause') }}:</h4>
-            <p class="text-gray-700 dark:text-gray-300">{{ $damageReport->cause }}</p>
+            <h4 class="font-medium text-inherit mb-2">{{ __('messages.damage_report.cause') }}:</h4>
+            <p class="text-inherit">{{ $damageReport->cause }}</p>
         </div>
         @endif
     </div>
@@ -140,19 +140,19 @@
     <!-- Resolution (if resolved) -->
     @if($damageReport->isResolved())
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-        <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{{ __('messages.damage_report.resolution_result') }}</h3>
+        <h3 class="text-lg font-semibold mb-4 text-inherit">{{ __('messages.damage_report.resolution_result') }}</h3>
         <dl class="space-y-3">
             <div>
-                <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.resolver') }}:</dt>
-                <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $damageReport->resolver?->name ?? 'N/A' }}</dd>
+                <dt class="text-inherit">{{ __('messages.damage_report.resolver') }}:</dt>
+                <dd class="font-medium text-inherit">{{ $damageReport->resolver?->name ?? 'N/A' }}</dd>
             </div>
             <div>
-                <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.damage_report.resolved_date') }}:</dt>
-                <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $damageReport->resolved_at->format('d/m/Y H:i') }}</dd>
+                <dt class="text-inherit">{{ __('messages.damage_report.resolved_date') }}:</dt>
+                <dd class="font-medium text-inherit">{{ $damageReport->resolved_at->format('d/m/Y H:i') }}</dd>
             </div>
             <div>
-                <dt class="text-gray-500 dark:text-gray-400 mb-1">{{ __('messages.damage_report.resolution_notes') }}:</dt>
-                <dd class="text-gray-700 dark:text-gray-300 whitespace-pre-line">{{ $damageReport->resolution_notes }}</dd>
+                <dt class="text-inherit mb-1">{{ __('messages.damage_report.resolution_notes') }}:</dt>
+                <dd class="text-inherit whitespace-pre-line">{{ $damageReport->resolution_notes }}</dd>
             </div>
         </dl>
     </div>
@@ -161,7 +161,7 @@
     <!-- Resolution Form (if pending) -->
     @if($damageReport->isPending())
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-        <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{{ __('messages.damage_report.handle_report') }}</h3>
+        <h3 class="text-lg font-semibold mb-4 text-inherit">{{ __('messages.damage_report.handle_report') }}</h3>
         <form action="{{ route('admin.damage-reports.resolve', $damageReport) }}" method="POST" class="space-y-4">
             @csrf
 

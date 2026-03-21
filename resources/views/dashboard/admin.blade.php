@@ -22,8 +22,8 @@
             <div class="flex items-start justify-between">
                 <div>
                     <p class="text-[11px] uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{{ __('messages.dashboard.admin.equipment_categories') }}</p>
-                    <h4 class="font-display text-4xl font-bold text-gray-900 dark:text-white mt-2">{{ number_format($stats['total_equipment']) }}</h4>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1">{{ __('messages.dashboard.admin.equipment_types') }}</p>
+                    <h4 class="font-display text-4xl font-bold text-inherit mt-2">{{ number_format($stats['total_equipment']) }}</h4>
+                    <p class="text-sm text-inherit font-medium mt-1">{{ __('messages.dashboard.admin.equipment_types') }}</p>
                 </div>
                 <div class="icon-container icon-container-indigo group-hover:scale-110 transition-transform duration-300">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,8 +40,8 @@
             <div class="flex items-start justify-between">
                 <div>
                     <p class="text-[11px] uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{{ __('messages.dashboard.admin.available_today') }}</p>
-                    <h4 class="font-display text-4xl font-bold text-gray-900 dark:text-white mt-2">{{ number_format($stats['available_items']) }}</h4>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1">{{ __('messages.dashboard.admin.ready_to_borrow') }}</p>
+                    <h4 class="font-display text-4xl font-bold text-inherit mt-2">{{ number_format($stats['available_items']) }}</h4>
+                    <p class="text-sm text-inherit font-medium mt-1">{{ __('messages.dashboard.admin.ready_to_borrow') }}</p>
                 </div>
                 <div class="icon-container icon-container-emerald group-hover:scale-110 transition-transform duration-300">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,8 +58,8 @@
             <div class="flex items-start justify-between">
                 <div>
                     <p class="text-[11px] uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{{ __('messages.dashboard.admin.tasks_to_approve') }}</p>
-                    <h4 class="font-display text-4xl font-bold text-gray-900 dark:text-white mt-2">{{ number_format($stats['pending_approvals']) }}</h4>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1">{{ __('messages.dashboard.admin.waiting_approval') }}</p>
+                    <h4 class="font-display text-4xl font-bold text-inherit mt-2">{{ number_format($stats['pending_approvals']) }}</h4>
+                    <p class="text-sm text-inherit font-medium mt-1">{{ __('messages.dashboard.admin.waiting_approval') }}</p>
                 </div>
                 <div class="icon-container icon-container-amber group-hover:scale-110 transition-transform duration-300">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@
                 @if($stats['pending_approvals'] > 0)
                 <span class="inline-flex items-center px-2 py-1 rounded-lg text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 animate-pulse">{{ __('messages.dashboard.admin.need_action') }}</span>
                 @else
-                <span class="inline-flex items-center px-2 py-1 rounded-lg text-xs font-semibold bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300">{{ __('messages.dashboard.admin.stable') }}</span>
+                <span class="inline-flex items-center px-2 py-1 rounded-lg text-xs font-semibold bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">{{ __('messages.dashboard.admin.stable') }}</span>
                 @endif
             </div>
         </div>
@@ -80,8 +80,8 @@
             <div class="flex items-start justify-between">
                 <div>
                     <p class="text-[11px] uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">{{ __('messages.dashboard.admin.late_return_risk') }}</p>
-                    <h4 class="font-display text-4xl font-bold text-gray-900 dark:text-white mt-2">{{ number_format($stats['overdue_records']) }}</h4>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1">{{ __('messages.dashboard.admin.overdue_return') }}</p>
+                    <h4 class="font-display text-4xl font-bold text-inherit mt-2">{{ number_format($stats['overdue_records']) }}</h4>
+                    <p class="text-sm text-inherit font-medium mt-1">{{ __('messages.dashboard.admin.overdue_return') }}</p>
                 </div>
                 <div class="icon-container icon-container-rose group-hover:scale-110 transition-transform duration-300">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@
                 @if($stats['overdue_records'] > 0)
                 <span class="inline-flex items-center px-2 py-1 rounded-lg text-xs font-semibold bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300 animate-pulse">{{ __('messages.dashboard.admin.warning') }}</span>
                 @else
-                <span class="inline-flex items-center px-2 py-1 rounded-lg text-xs font-semibold bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300">{{ __('messages.dashboard.admin.no_overdue') }}</span>
+                <span class="inline-flex items-center px-2 py-1 rounded-lg text-xs font-semibold bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">{{ __('messages.dashboard.admin.no_overdue') }}</span>
                 @endif
             </div>
         </div>
@@ -106,7 +106,7 @@
                     <span class="w-2 h-2 rounded-full bg-sky-500 mr-2"></span>
                     {{ __('messages.dashboard.admin.monthly_borrows') }}
                 </h3>
-                <span class="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-lg">12 {{ __('messages.dashboard.admin.months') }}</span>
+                <span class="text-xs text-inherit bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-lg">12 {{ __('messages.dashboard.admin.months') }}</span>
             </div>
             <canvas id="monthlyBorrowsChart" height="200"></canvas>
         </div>
@@ -117,7 +117,7 @@
                     <span class="w-2 h-2 rounded-full bg-teal-500 mr-2"></span>
                     {{ __('messages.dashboard.admin.equipment_by_subject') }}
                 </h3>
-                <span class="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-lg">{{ __('messages.dashboard.admin.overview') }}</span>
+                <span class="text-xs text-inherit bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-lg">{{ __('messages.dashboard.admin.overview') }}</span>
             </div>
             <canvas id="equipmentBySubjectChart" height="200"></canvas>
         </div>
@@ -140,7 +140,7 @@
                     <span class="w-2 h-2 rounded-full bg-cyan-500 mr-2"></span>
                     {{ __('messages.dashboard.admin.most_borrowed') }}
                 </h3>
-                <span class="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-lg">{{ __('messages.dashboard.admin.top') }} 10</span>
+                <span class="text-xs text-inherit bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-lg">{{ __('messages.dashboard.admin.top') }} 10</span>
             </div>
             <canvas id="topBorrowedChart" height="150"></canvas>
         </div>
@@ -163,8 +163,8 @@
                                 {{ substr($borrow->user->name, 0, 1) }}
                             </div>
                             <div>
-                                <p class="font-semibold text-gray-900 dark:text-white">{{ $borrow->user->name }}</p>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ $borrow->borrow_date->format('d/m/Y') }} - {{ __('messages.borrow.period') }} {{ $borrow->period }}</p>
+                                <p class="font-semibold text-inherit">{{ $borrow->user->name }}</p>
+                                <p class="text-sm text-inherit">{{ $borrow->borrow_date->format('d/m/Y') }} - {{ __('messages.borrow.period') }} {{ $borrow->period }}</p>
                             </div>
                         </div>
                         <span class="px-3 py-1.5 text-xs font-medium rounded-full
@@ -178,11 +178,11 @@
                     @empty
                     <div class="text-center py-8">
                         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                             </svg>
                         </div>
-                        <p class="text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.admin.no_borrows') }}</p>
+                        <p class="text-inherit">{{ __('messages.dashboard.admin.no_borrows') }}</p>
                     </div>
                     @endforelse
                 </div>
@@ -211,8 +211,8 @@
                                 {{ substr($pending->user->name, 0, 1) }}
                             </div>
                             <div>
-                                <p class="font-semibold text-gray-900 dark:text-white">{{ $pending->user->name }}</p>
-                                <p class="text-sm text-gray-500 dark:text-gray-400 truncate max-w-[220px]">
+                                <p class="font-semibold text-inherit">{{ $pending->user->name }}</p>
+                                <p class="text-sm text-inherit truncate max-w-[220px]">
                                     @foreach($pending->details as $detail)
                                     {{ $detail->equipmentItem->equipment->name }}{{ !$loop->last ? ', ' : '' }}
                                     @endforeach
@@ -235,7 +235,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0"/>
                             </svg>
                         </div>
-                        <p class="text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.admin.no_pending') }}</p>
+                        <p class="text-inherit">{{ __('messages.dashboard.admin.no_pending') }}</p>
                     </div>
                     @endforelse
                 </div>

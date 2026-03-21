@@ -14,36 +14,9 @@
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <style>
-        /* Dark mode styles */
-        .dark body { background-color: #111827; }
-        .dark .bg-white { background-color: #1f2937; }
-        .dark .bg-gray-50 { background-color: #374151; }
-        .dark .bg-gray-100 { background-color: #111827; }
-        .dark .text-gray-900, .dark .text-gray-800, .dark .text-gray-700 { color: #f3f4f6; }
-        .dark .text-gray-600, .dark .text-gray-500 { color: #d1d5db; }
-        .dark .text-gray-400 { color: #9ca3af; }
-        .dark .border-gray-200, .dark .border-gray-300 { border-color: #374151; }
-        .dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
-        .dark .shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4); }
-        .dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
-        .dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4); }
-        .dark input, .dark select, .dark textarea {
-            background-color: #374151;
-            border-color: #4b5563;
-            color: #f3f4f6;
-        }
-        .dark input:focus, .dark select:focus, .dark textarea:focus {
-            border-color: #14b8a6;
-        }
-        .dark .hover\:bg-gray-100:hover { background-color: #374151; }
-        .dark .hover\:bg-gray-50:hover { background-color: #374151; }
-        .dark .bg-indigo-50 { background-color: rgba(20, 184, 166, 0.15); }
-    </style>
-
     @stack('styles')
 </head>
-<body class="app-shell font-sans antialiased" x-data="{ sidebarOpen: false }" :class="{ 'dark': darkMode }">
+<body class="app-shell font-sans antialiased" x-data="{ sidebarOpen: false }">
     <div class="min-h-screen flex">
         <!-- Sidebar -->
         <aside class="fixed inset-y-0 left-0 z-50 w-64 gradient-sidebar transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 sidebar-scroll overflow-y-auto"
@@ -126,7 +99,7 @@
                 @if(auth()->user()->isAdmin())
                 <div class="mt-8 pt-6 border-t border-white/10">
                     <div class="px-4 mb-3">
-                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider flex items-center">
+                        <span class="text-xs font-semibold text-white/70 uppercase tracking-wider flex items-center">
                             <span class="w-8 h-px bg-gradient-to-r from-teal-400 to-sky-400 mr-2"></span>
                             {{ __('messages.nav.admin') }}
                         </span>
@@ -246,7 +219,7 @@
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-sm font-medium text-white truncate">{{ auth()->user()->name }}</p>
-                        <p class="text-xs text-gray-400 truncate">{{ auth()->user()->email }}</p>
+                        <p class="text-xs text-white/70 truncate">{{ auth()->user()->email }}</p>
                     </div>
                 </div>
             </div>
@@ -269,13 +242,13 @@
             <header class="glass-header sticky top-0 z-30">
                 <div class="flex items-center justify-between px-6 py-4">
                     <div class="flex items-center space-x-4">
-                        <button @click="sidebarOpen = !sidebarOpen" class="lg:hidden p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                        <button @click="sidebarOpen = !sidebarOpen" class="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                             </svg>
                         </button>
 
-                        <h1 class="font-display text-xl font-bold text-gray-800 dark:text-white tracking-tight">@yield('title', 'Dashboard')</h1>
+                        <h1 class="font-display text-xl font-bold text-inherit tracking-tight">@yield('title', 'Dashboard')</h1>
                     </div>
 
                     <div class="flex items-center space-x-3">
@@ -284,9 +257,9 @@
                             <div class="relative group">
                                 <input type="text" name="q" placeholder="{{ __('messages.search') }}"
                                        value="{{ request('q') }}"
-                                       class="w-64 pl-10 pr-4 py-2.5 text-sm bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 transition-all duration-200 group-hover:bg-white dark:group-hover:bg-gray-700">
+                                       class="w-64 pl-10 pr-4 py-2.5 text-sm text-white placeholder:text-slate-300 bg-slate-800 dark:bg-gray-800 border border-slate-700 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 transition-all duration-200 group-hover:bg-slate-700 dark:group-hover:bg-gray-700">
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <svg class="h-5 w-5 text-gray-400 group-hover:text-teal-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="h-5 w-5 group-hover:text-teal-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                                     </svg>
                                 </div>
@@ -295,7 +268,7 @@
 
                         <!-- Dark Mode Toggle -->
                         <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
-                                class="relative p-2.5 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-all duration-200"
+                                class="relative p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-all duration-200"
                                 :title="darkMode ? '{{ __('messages.theme.light_mode') }}' : '{{ __('messages.theme.dark_mode') }}'">
                             <!-- Sun icon (shown in dark mode) -->
                             <svg x-show="darkMode" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 rotate-90" x-transition:enter-end="opacity-100 rotate-0" class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,7 +291,7 @@
                                     .then(d => count = d.count);
                             }, 30000);
                         " class="relative">
-                            <a href="{{ route('notifications.index') }}" class="relative p-2.5 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 inline-flex">
+                            <a href="{{ route('notifications.index') }}" class="relative p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 inline-flex">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
                                 </svg>
@@ -338,11 +311,11 @@
                                         <span class="text-white text-sm font-semibold">{{ substr(auth()->user()->name, 0, 1) }}</span>
                                     </div>
                                 </div>
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 hidden sm:block">{{ auth()->user()->name }}</span>
+                                <span class="text-sm font-medium hidden sm:block">{{ auth()->user()->name }}</span>
                             </a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <button type="submit" class="p-2 text-gray-400 hover:text-red-500 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-200" title="{{ __('messages.auth.logout') }}">
+                                <button type="submit" class="p-2 hover:text-red-500 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-200" title="{{ __('messages.auth.logout') }}">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
                                     </svg>

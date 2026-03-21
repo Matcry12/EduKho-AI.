@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base text color - inherits to all children naturally */
+body {
+    color: var(--text-primary);
+}
+
+/* Sidebar - always white text on dark gradient */
+.gradient-sidebar {
+    color: #ffffff !important;
+}
+.gradient-sidebar * {
+    color: inherit;
+}
+
 :root {
     --bg-canvas: #eef2f5;
     --surface: #ffffff;
@@ -40,9 +53,9 @@
     --surface: #111827;
     --surface-soft: #0f172a;
     --surface-strong: #172136;
-    --text-primary: #e2e8f0;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --text-muted: #cbd5e1;
     --line: #263247;
 
     --brand: #14b8a6;
@@ -79,6 +92,102 @@
         font-family: 'Space Grotesk', 'Manrope', sans-serif;
         letter-spacing: -0.01em;
     }
+}
+
+/* ========================================
+   LEGACY UTILITY COMPATIBILITY
+   ======================================== */
+.text-gray-900,
+.text-gray-950 {
+    color: var(--text-primary);
+}
+
+.text-gray-500,
+.text-gray-600,
+.text-slate-500 {
+    color: var(--text-secondary);
+}
+
+.dark .text-gray-900,
+.dark .text-gray-950,
+.dark .dark\:text-gray-900,
+.dark .dark\:text-gray-950 {
+    color: var(--text-primary);
+}
+
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-slate-500,
+.dark .dark\:text-slate-400 {
+    color: var(--text-secondary);
+}
+
+.dark .bg-white {
+    background-color: var(--surface);
+}
+
+.dark .bg-gray-50 {
+    background-color: color-mix(in srgb, var(--surface-strong) 72%, var(--surface));
+}
+
+.dark .bg-gray-100 {
+    background-color: var(--surface-strong);
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+    border-color: var(--line);
+}
+
+.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: var(--line);
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+    background-color: var(--surface-strong);
+    border-color: var(--line);
+    color: var(--text-primary);
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+    border-color: var(--brand);
+}
+
+.dark .hover\:bg-gray-100:hover,
+.dark .hover\:bg-gray-50:hover {
+    background-color: var(--surface-strong);
+}
+
+.dark .bg-indigo-50 {
+    background-color: var(--brand-soft);
+}
+
+/* Keep header search readable even if old Blade markup is cached */
+.glass-header input[name='q'] {
+    color: #ffffff;
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+.glass-header input[name='q']::placeholder {
+    color: #cbd5e1;
+}
+
+.glass-header input[name='q']:hover {
+    background-color: #334155;
+}
+
+/* Import guide panel readability fallback (light mode) */
+[class*='bg-cyan-50/90'] [class*='text-cyan-800'] {
+    color: #0f172a !important;
+}
+
+[class*='bg-cyan-50/90'] [class*='text-cyan-700'] {
+    color: #1e293b !important;
 }
 
 /* ========================================
@@ -469,7 +578,7 @@
 
     .stat-card {
         @apply rounded-2xl p-6 transition-all duration-300 relative overflow-hidden;
-        background: linear-gradient(155deg, rgba(255, 255, 255, 0.96) 0%, var(--surface) 70%);
+        background: #ffffff;
         border: 1px solid var(--line);
         box-shadow: var(--shadow-card);
     }
@@ -478,7 +587,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(120deg, rgba(255, 255, 255, 0.35), transparent 40%);
+        background: none;
         pointer-events: none;
     }
 
@@ -576,7 +685,7 @@
 
     .sidebar-nav-item {
         @apply flex items-center px-4 py-3 rounded-xl transition-all duration-200 relative;
-        color: rgba(226, 232, 240, 0.76);
+        color: #ffffff;
     }
 
     .sidebar-nav-item > div {
@@ -906,7 +1015,7 @@
 .dark .stat-card,
 .dark .card,
 .dark .chart-container {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), var(--surface));
+    background: #1e293b;
     border-color: var(--line);
 }
 
@@ -916,12 +1025,12 @@
 }
 
 .dark .sidebar-nav-item {
-    color: rgba(203, 213, 225, 0.72);
+    color: #ffffff;
 }
 
 .dark .sidebar-nav-item:hover,
 .dark .sidebar-nav-item.active {
-    color: #f8fafc;
+    color: #ffffff;
 }
 
 .dark .form-input,

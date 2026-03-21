@@ -82,30 +82,41 @@ class BorrowController extends Controller
 
         $equipment = Equipment::findOrFail($validated['equipment_id']);
 
-        // Check availability
-        $availableItems = $equipment->items()->available()->take($validated['quantity'])->get();
+        $availableItemIds = $equipment->items()
+            ->available()
+            ->pluck('id');
 
-        if ($availableItems->count() < $validated['quantity']) {
+        if ($availableItemIds->count() < $validated['quantity']) {
             return back()
                 ->withInput()
-                ->with('error', "Chỉ còn {$availableItems->count()} {$equipment->unit} khả dụng.");
+                ->with('error', "Chỉ còn {$availableItemIds->count()} {$equipment->unit} khả dụng.");
         }
 
-        // Check for conflicts
-        $hasConflict = BorrowRecord::conflictsWith(
-            $validated['borrow_date'],
-            $validated['expected_return_date']
-        )->whereHas('details', function ($q) use ($availableItems) {
-            $q->whereIn('equipment_item_id', $availableItems->pluck('id'));
-        })->exists();
+        $conflictingItemIds = BorrowDetail::query()
+            ->whereIn('equipment_item_id', $availableItemIds)
+            ->whereHas('borrowRecord', function ($query) use ($validated) {
+                $query->conflictsWith($validated['borrow_date'], $validated['expected_return_date']);
+            })
+            ->distinct()
+            ->pluck('equipment_item_id');
 
-        if ($hasConflict) {
+        $selectableItemsQuery = EquipmentItem::query()->whereIn('id', $availableItemIds);
+
+        if ($conflictingItemIds->isNotEmpty()) {
+            $selectableItemsQuery->whereNotIn('id', $conflictingItemIds);
+        }
+
+        $selectedItems = $selectableItemsQuery
+            ->take($validated['quantity'])
+            ->get();
+
+        if ($selectedItems->count() < $validated['quantity']) {
             return back()
                 ->withInput()
                 ->with('error', 'Thiết bị đã được đăng ký mượn trong khoảng thời gian này.');
         }
 
-        $borrowRecord = DB::transaction(function () use ($validated, $availableItems, $equipment) {
+        $borrowRecord = DB::transaction(function () use ($validated, $selectedItems, $equipment) {
             // Determine approval status
             $approvalStatus = $equipment->isHighSecurity() ? 'pending' : 'auto_approved';
 
@@ -124,7 +135,7 @@ class BorrowController extends Controller
             ]);
 
             // Create borrow details and mark items as borrowed
-            foreach ($availableItems as $item) {
+            foreach ($selectedItems as $item) {
                 BorrowDetail::create([
                     'borrow_record_id' => $borrowRecord->id,
                     'equipment_item_id' => $item->id,

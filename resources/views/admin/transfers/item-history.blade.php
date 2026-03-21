@@ -34,12 +34,12 @@
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                     @forelse($transfers as $transfer)
                         <tr>
-                            <td class="text-gray-600 dark:text-gray-300">{{ $transfer->transfer_date->format('d/m/Y') }}</td>
-                            <td class="text-gray-600 dark:text-gray-300">{{ $transfer->fromRoom?->name ?? 'Chua gan phong' }}</td>
-                            <td class="text-gray-600 dark:text-gray-300">{{ $transfer->toRoom?->name ?? 'Chua gan phong' }}</td>
-                            <td class="text-gray-600 dark:text-gray-300">{{ $transfer->transferredBy->name }}</td>
-                            <td class="text-gray-600 dark:text-gray-300">{{ $transfer->reason ?: 'Khong co' }}</td>
-                            <td class="text-gray-600 dark:text-gray-300">{{ $transfer->notes ?: 'Khong co' }}</td>
+                            <td class="text-inherit">{{ $transfer->transfer_date->format('d/m/Y') }}</td>
+                            <td class="text-inherit">{{ $transfer->fromRoom?->name ?? 'Chua gan phong' }}</td>
+                            <td class="text-inherit">{{ $transfer->toRoom?->name ?? 'Chua gan phong' }}</td>
+                            <td class="text-inherit">{{ $transfer->transferredBy->name }}</td>
+                            <td class="text-inherit">{{ $transfer->reason ?: 'Khong co' }}</td>
+                            <td class="text-inherit">{{ $transfer->notes ?: 'Khong co' }}</td>
                         </tr>
                     @empty
                         <tr>

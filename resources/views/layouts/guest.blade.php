@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="@yield('body_class', 'font-sans antialiased')" :class="{ 'dark': darkMode }">
+<body class="@yield('body_class', 'font-sans antialiased')">
     <div class="guest-shell">
         <div class="guest-backdrop" aria-hidden="true"></div>
         <main class="guest-main">

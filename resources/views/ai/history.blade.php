@@ -35,7 +35,7 @@
                     @forelse($logs as $log)
                     <tr>
                         <td>{{ $log->created_at->format('d/m/Y H:i') }}</td>
-                        <td class="font-medium text-gray-900 dark:text-gray-100 max-w-md truncate">{{ Str::limit($log->user_message, 100) }}</td>
+                        <td class="font-medium text-inherit max-w-md truncate">{{ Str::limit($log->user_message, 100) }}</td>
                         <td>
                             <span class="table-pill
                                 @if($log->status === 'success') bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300
@@ -52,7 +52,7 @@
                                 #{{ $log->borrow_record_id }}
                             </a>
                             @else
-                            <span class="text-gray-400 dark:text-gray-500">-</span>
+                            <span class="text-inherit">-</span>
                             @endif
                         </td>
                     </tr>

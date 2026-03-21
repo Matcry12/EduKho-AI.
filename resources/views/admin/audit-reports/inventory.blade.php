@@ -16,11 +16,11 @@
     <section class="filter-panel animate-fade-in-up" style="animation-delay: 80ms;">
         <form method="GET" class="flex flex-wrap gap-3">
             <div>
-                <label for="from_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tu ngay</label>
+                <label for="from_date" class="block text-sm font-medium text-inherit mb-1">Tu ngay</label>
                 <input id="from_date" name="from_date" type="date" value="{{ request('from_date', \Illuminate\Support\Carbon::parse($fromDate)->format('Y-m-d')) }}" class="form-input">
             </div>
             <div>
-                <label for="to_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Den ngay</label>
+                <label for="to_date" class="block text-sm font-medium text-inherit mb-1">Den ngay</label>
                 <input id="to_date" name="to_date" type="date" value="{{ request('to_date', \Illuminate\Support\Carbon::parse($toDate)->format('Y-m-d')) }}" class="form-input">
             </div>
             <div class="flex items-end">
@@ -30,16 +30,16 @@
     </section>
 
     <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 animate-fade-in-up" style="animation-delay: 120ms;">
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Loai thiet bi</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($equipmentStats['total_types']) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Tong item</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($equipmentStats['total_items']) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">San sang</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($equipmentStats['available']) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Tong gia tri</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($totalValue) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Loai thiet bi</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($equipmentStats['total_types']) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Tong item</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($equipmentStats['total_items']) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">San sang</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($equipmentStats['available']) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Tong gia tri</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($totalValue) }}</p></div></article>
     </section>
 
     <section class="grid gap-4 lg:grid-cols-2 animate-fade-in-up" style="animation-delay: 160ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Bien dong ton kho</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Bien dong ton kho</h3>
                 <div class="mt-4 grid gap-3 sm:grid-cols-2">
                     <div class="rounded-2xl bg-emerald-50 px-4 py-4 text-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-200">
                         <p class="text-sm">Tang kho</p>
@@ -55,12 +55,12 @@
 
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Trang thai item</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Trang thai item</h3>
                 <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-gray-500 dark:text-gray-400">Dang muon</p><p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">{{ number_format($equipmentStats['borrowed']) }}</p></div>
-                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-gray-500 dark:text-gray-400">Bao tri</p><p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">{{ number_format($equipmentStats['maintenance']) }}</p></div>
-                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-gray-500 dark:text-gray-400">Hong</p><p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">{{ number_format($equipmentStats['broken']) }}</p></div>
-                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-gray-500 dark:text-gray-400">Mat</p><p class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">{{ number_format($equipmentStats['lost']) }}</p></div>
+                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-inherit">Dang muon</p><p class="mt-2 text-2xl font-bold text-inherit">{{ number_format($equipmentStats['borrowed']) }}</p></div>
+                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-inherit">Bao tri</p><p class="mt-2 text-2xl font-bold text-inherit">{{ number_format($equipmentStats['maintenance']) }}</p></div>
+                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-inherit">Hong</p><p class="mt-2 text-2xl font-bold text-inherit">{{ number_format($equipmentStats['broken']) }}</p></div>
+                    <div class="rounded-2xl bg-white px-4 py-4 ring-1 ring-gray-200 dark:bg-gray-900 dark:ring-gray-700"><p class="text-sm text-inherit">Mat</p><p class="mt-2 text-2xl font-bold text-inherit">{{ number_format($equipmentStats['lost']) }}</p></div>
                 </div>
             </div>
         </article>
@@ -69,7 +69,7 @@
     <section class="grid gap-4 lg:grid-cols-2 animate-fade-in-up" style="animation-delay: 200ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Top gia tri cao</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Top gia tri cao</h3>
                 <div class="mt-4 overflow-x-auto">
                     <table class="data-table">
                         <thead>
@@ -97,7 +97,7 @@
 
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Canh bao sap het</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Canh bao sap het</h3>
                 <div class="mt-4 overflow-x-auto">
                     <table class="data-table">
                         <thead>

@@ -37,16 +37,16 @@
                     @foreach($users as $user)
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-900 dark:text-white">{{ $user->name }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{ $user->phone }}</div>
+                            <div class="font-semibold text-inherit">{{ $user->name }}</div>
+                            <div class="text-sm text-inherit">{{ $user->phone }}</div>
                         </td>
-                        <td class="text-gray-600 dark:text-gray-300">{{ $user->email }}</td>
+                        <td class="text-inherit">{{ $user->email }}</td>
                         <td>
                             <span class="table-pill {{ $user->role === 'admin' ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300' : 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' }}">
                                 {{ $user->role === 'admin' ? __('messages.user.admin') : __('messages.user.teacher') }}
                             </span>
                         </td>
-                        <td class="text-gray-600 dark:text-gray-300">{{ $user->department?->name ?? '-' }}</td>
+                        <td class="text-inherit">{{ $user->department?->name ?? '-' }}</td>
                         <td>
                             <span class="table-pill {{ $user->is_active ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300' : 'bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300' }}">
                                 {{ $user->is_active ? __('messages.user.active') : __('messages.user.inactive') }}
@@ -65,7 +65,7 @@
                             </form>
                             @endif
                             <a href="{{ route('admin.users.show', $user) }}" class="text-sm font-semibold text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200">{{ __('messages.view') }}</a>
-                            <a href="{{ route('admin.users.edit', $user) }}" class="text-sm font-semibold text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">{{ __('messages.edit') }}</a>
+                            <a href="{{ route('admin.users.edit', $user) }}" class="text-sm font-semibold text-gray-900 hover:text-inherit dark:hover:text-gray-200">{{ __('messages.edit') }}</a>
                         </td>
                     </tr>
                     @endforeach

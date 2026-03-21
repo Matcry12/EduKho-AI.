@@ -6,7 +6,7 @@
 <div class="max-w-2xl mx-auto">
     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
         <div class="px-6 py-4 border-b border-gray-200">
-            <h2 class="text-lg font-semibold text-gray-800">Sua bao cao tu dong</h2>
+            <h2 class="text-lg font-semibold text-gray-950">Sua bao cao tu dong</h2>
         </div>
 
         <form method="POST" action="{{ route('admin.scheduled-reports.update', $scheduledReport) }}" class="p-6 space-y-6" x-data="{ frequency: '{{ old('frequency', $scheduledReport->frequency) }}' }">
@@ -73,7 +73,7 @@
             <div>
                 <label for="recipients" class="form-label">Nguoi nhan <span class="text-red-500">*</span></label>
                 <textarea name="recipients" id="recipients" rows="3" required class="form-input">{{ old('recipients', implode(', ', $scheduledReport->recipients)) }}</textarea>
-                <p class="mt-1 text-sm text-gray-500">Nhap danh sach email, phan cach bang dau phay</p>
+                <p class="mt-1 text-sm text-gray-900">Nhap danh sach email, phan cach bang dau phay</p>
             </div>
 
             <div class="flex items-center">
@@ -81,11 +81,11 @@
                 <input type="checkbox" name="is_active" id="is_active" value="1"
                        {{ old('is_active', $scheduledReport->is_active) ? 'checked' : '' }}
                        class="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                <label for="is_active" class="ml-2 text-sm text-gray-700">Hoat dong</label>
+                <label for="is_active" class="ml-2 text-sm text-gray-950">Hoat dong</label>
             </div>
 
             <div class="flex items-center justify-between pt-4">
-                <a href="{{ route('admin.scheduled-reports.index') }}" class="text-sm text-gray-600 hover:text-gray-900">Huy</a>
+                <a href="{{ route('admin.scheduled-reports.index') }}" class="text-sm text-gray-900 hover:text-gray-900">Huy</a>
                 <button type="submit" class="btn-primary">Luu thay doi</button>
             </div>
         </form>

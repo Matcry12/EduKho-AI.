@@ -25,19 +25,19 @@
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up" style="animation-delay: 80ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.room.info') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.room.info') }}</h3>
                 <dl class="space-y-2 text-sm">
-                    <div class="flex justify-between"><dt class="text-gray-500 dark:text-gray-400">{{ __('messages.room.type') }}:</dt><dd class="font-medium text-gray-900 dark:text-gray-100">{{ $room->type === 'warehouse' ? __('messages.room.warehouse') : __('messages.room.lab') }}</dd></div>
-                    <div class="flex justify-between"><dt class="text-gray-500 dark:text-gray-400">{{ __('messages.room.manager') }}:</dt><dd class="font-medium text-gray-900 dark:text-gray-100">{{ $room->manager?->name ?? '-' }}</dd></div>
-                    <div class="flex justify-between"><dt class="text-gray-500 dark:text-gray-400">{{ __('messages.room.capacity') }}:</dt><dd class="font-medium text-gray-900 dark:text-gray-100">{{ $room->capacity ?? '-' }}</dd></div>
-                    <div class="flex justify-between"><dt class="text-gray-500 dark:text-gray-400">{{ __('messages.equipment.title') }}:</dt><dd class="font-medium text-gray-900 dark:text-gray-100">{{ $room->equipmentItems->count() }}</dd></div>
+                    <div class="flex justify-between"><dt class="text-inherit">{{ __('messages.room.type') }}:</dt><dd class="font-medium text-inherit">{{ $room->type === 'warehouse' ? __('messages.room.warehouse') : __('messages.room.lab') }}</dd></div>
+                    <div class="flex justify-between"><dt class="text-inherit">{{ __('messages.room.manager') }}:</dt><dd class="font-medium text-inherit">{{ $room->manager?->name ?? '-' }}</dd></div>
+                    <div class="flex justify-between"><dt class="text-inherit">{{ __('messages.room.capacity') }}:</dt><dd class="font-medium text-inherit">{{ $room->capacity ?? '-' }}</dd></div>
+                    <div class="flex justify-between"><dt class="text-inherit">{{ __('messages.equipment.title') }}:</dt><dd class="font-medium text-inherit">{{ $room->equipmentItems->count() }}</dd></div>
                 </dl>
             </div>
         </article>
 
         <article class="lg:col-span-2 data-table-wrap">
             <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.room.equipment_in_room') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">{{ __('messages.room.equipment_in_room') }}</h3>
             </div>
             <div class="overflow-x-auto">
                 <table class="data-table">
@@ -52,7 +52,7 @@
                         @forelse($room->equipmentItems as $item)
                         <tr>
                             <td>{{ $item->specific_code }}</td>
-                            <td class="font-medium text-gray-900 dark:text-gray-100">{{ $item->equipment->name }}</td>
+                            <td class="font-medium text-inherit">{{ $item->equipment->name }}</td>
                             <td>
                                 <span class="table-pill
                                     @if($item->status === 'available') bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300

@@ -26,8 +26,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="font-display text-3xl font-bold text-gray-900 dark:text-white">{{ $stats['total_borrows'] }}</h4>
-                    <p class="text-xs uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.total_records') }}</p>
+                    <h4 class="font-display text-3xl font-bold text-inherit">{{ $stats['total_borrows'] }}</h4>
+                    <p class="text-xs uppercase tracking-[0.12em] text-inherit">{{ __('messages.dashboard.teacher.total_records') }}</p>
                 </div>
             </div>
         </div>
@@ -40,8 +40,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="font-display text-3xl font-bold text-gray-900 dark:text-white">{{ $stats['active_borrows'] }}</h4>
-                    <p class="text-xs uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.borrowing') }}</p>
+                    <h4 class="font-display text-3xl font-bold text-inherit">{{ $stats['active_borrows'] }}</h4>
+                    <p class="text-xs uppercase tracking-[0.12em] text-inherit">{{ __('messages.dashboard.teacher.borrowing') }}</p>
                 </div>
             </div>
         </div>
@@ -54,8 +54,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="font-display text-3xl font-bold text-gray-900 dark:text-white">{{ $stats['returned_borrows'] }}</h4>
-                    <p class="text-xs uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.returned') }}</p>
+                    <h4 class="font-display text-3xl font-bold text-inherit">{{ $stats['returned_borrows'] }}</h4>
+                    <p class="text-xs uppercase tracking-[0.12em] text-inherit">{{ __('messages.dashboard.teacher.returned') }}</p>
                 </div>
             </div>
         </div>
@@ -68,8 +68,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="font-display text-3xl font-bold text-gray-900 dark:text-white">{{ $stats['pending_approvals'] }}</h4>
-                    <p class="text-xs uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.pending') }}</p>
+                    <h4 class="font-display text-3xl font-bold text-inherit">{{ $stats['pending_approvals'] }}</h4>
+                    <p class="text-xs uppercase tracking-[0.12em] text-inherit">{{ __('messages.dashboard.teacher.pending') }}</p>
                 </div>
             </div>
         </div>
@@ -141,9 +141,9 @@
                         </div>
                         <div>
                             @foreach($borrow->details as $detail)
-                            <p class="font-semibold text-gray-900 dark:text-white">{{ $detail->equipmentItem->equipment->name }}</p>
+                            <p class="font-semibold text-inherit">{{ $detail->equipmentItem->equipment->name }}</p>
                             @endforeach
-                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.return_before') }}: {{ $borrow->expected_return_date->format('d/m/Y') }}</p>
+                            <p class="text-sm text-inherit">{{ __('messages.dashboard.teacher.return_before') }}: {{ $borrow->expected_return_date->format('d/m/Y') }}</p>
                         </div>
                     </div>
                     <a href="{{ route('borrow.show', $borrow) }}" class="px-3 py-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200 hover:bg-teal-50 dark:hover:bg-teal-900/30 rounded-lg transition-colors">
@@ -157,7 +157,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0"/>
                         </svg>
                     </div>
-                    <p class="text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.no_borrows') }}</p>
+                    <p class="text-inherit">{{ __('messages.dashboard.teacher.no_borrows') }}</p>
                     <a href="{{ route('borrow.create') }}" class="inline-flex items-center mt-3 text-sm text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200 font-semibold">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
@@ -192,9 +192,9 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="font-semibold text-gray-900 dark:text-white">{{ $plan->lesson_name }}</p>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $plan->planned_date->format('d/m/Y') }} - {{ __('messages.borrow.period') }} {{ $plan->period }}</p>
-                            <p class="text-xs text-gray-400 dark:text-gray-500">{{ $plan->equipment->name }} ({{ $plan->quantity_needed }} {{ $plan->equipment->unit }})</p>
+                            <p class="font-semibold text-inherit">{{ $plan->lesson_name }}</p>
+                            <p class="text-sm text-inherit">{{ $plan->planned_date->format('d/m/Y') }} - {{ __('messages.borrow.period') }} {{ $plan->period }}</p>
+                            <p class="text-xs text-inherit">{{ $plan->equipment->name }} ({{ $plan->quantity_needed }} {{ $plan->equipment->unit }})</p>
                         </div>
                     </div>
                     @if(!$plan->hasBorrowRecord())
@@ -214,7 +214,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2"/>
                         </svg>
                     </div>
-                    <p class="text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.no_plans') }}</p>
+                    <p class="text-inherit">{{ __('messages.dashboard.teacher.no_plans') }}</p>
                 </div>
                 @endforelse
             </div>
@@ -242,11 +242,11 @@
             <table class="table-modern">
                 <thead>
                     <tr>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider">{{ __('messages.borrow.equipment') }}</th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider">{{ __('messages.borrow.borrow_date') }}</th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider">{{ __('messages.borrow.period') }}</th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider">{{ __('messages.borrow.status') }}</th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider"></th>
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-inherit uppercase tracking-wider">{{ __('messages.borrow.equipment') }}</th>
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-inherit uppercase tracking-wider">{{ __('messages.borrow.borrow_date') }}</th>
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-inherit uppercase tracking-wider">{{ __('messages.borrow.period') }}</th>
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-inherit uppercase tracking-wider">{{ __('messages.borrow.status') }}</th>
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-inherit uppercase tracking-wider"></th>
                     </tr>
                 </thead>
                 <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-100 dark:divide-gray-700">
@@ -261,14 +261,14 @@
                                 </div>
                                 <div>
                                     @foreach($borrow->details as $detail)
-                                    <span class="text-sm font-medium text-gray-900 dark:text-white">{{ $detail->equipmentItem->equipment->name }}</span>
+                                    <span class="text-sm font-medium text-inherit">{{ $detail->equipmentItem->equipment->name }}</span>
                                     @if(!$loop->last)<br>@endif
                                     @endforeach
                                 </div>
                             </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">{{ $borrow->borrow_date->format('d/m/Y') }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">{{ __('messages.borrow.period') }} {{ $borrow->period }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-inherit">{{ $borrow->borrow_date->format('d/m/Y') }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-inherit">{{ __('messages.borrow.period') }} {{ $borrow->period }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <span class="px-3 py-1.5 text-xs font-medium rounded-full
                                 @if($borrow->status === 'active') bg-cyan-100 text-cyan-700 dark:bg-cyan-900/50 dark:text-cyan-300
@@ -286,11 +286,11 @@
                     <tr>
                         <td colspan="5" class="px-6 py-12 text-center">
                             <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                                 </svg>
                             </div>
-                            <p class="text-gray-500 dark:text-gray-400">{{ __('messages.dashboard.teacher.no_history') }}</p>
+                            <p class="text-inherit">{{ __('messages.dashboard.teacher.no_history') }}</p>
                         </td>
                     </tr>
                     @endforelse

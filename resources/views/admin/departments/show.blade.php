@@ -42,12 +42,12 @@
         </div>
         <div class="card bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700">
             <div class="card-body flex items-center">
-                <svg class="w-8 h-8 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
                 </svg>
                 <div class="ml-4">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('messages.department.inactive_members') }}</p>
-                    <p class="text-2xl font-bold text-gray-800 dark:text-gray-200">{{ $department->users->where('is_active', false)->count() }}</p>
+                    <p class="text-sm text-inherit">{{ __('messages.department.inactive_members') }}</p>
+                    <p class="text-2xl font-bold text-inherit">{{ $department->users->where('is_active', false)->count() }}</p>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
     <!-- Members List -->
     <section class="data-table-wrap animate-fade-in-up" style="animation-delay: 120ms;">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.department.members_list') }}</h3>
+            <h3 class="text-lg font-semibold text-inherit">{{ __('messages.department.members_list') }}</h3>
         </div>
         <div class="overflow-x-auto">
             <table class="data-table">
@@ -73,10 +73,10 @@
                     @forelse($department->users as $user)
                     <tr>
                         <td>
-                            <div class="font-semibold text-gray-900 dark:text-white">{{ $user->name }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{ $user->phone }}</div>
+                            <div class="font-semibold text-inherit">{{ $user->name }}</div>
+                            <div class="text-sm text-inherit">{{ $user->phone }}</div>
                         </td>
-                        <td class="text-gray-600 dark:text-gray-300">{{ $user->email }}</td>
+                        <td class="text-inherit">{{ $user->email }}</td>
                         <td>
                             <span class="table-pill {{ $user->role === 'admin' ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300' : 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' }}">
                                 {{ $user->role === 'admin' ? __('messages.user.admin') : __('messages.user.teacher') }}

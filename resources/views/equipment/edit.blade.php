@@ -74,12 +74,12 @@
                 <label class="flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-800/40 px-4 py-3">
                     <input type="hidden" name="is_digital" value="0">
                     <input type="checkbox" name="is_digital" value="1" {{ old('is_digital', $equipment->is_digital) ? 'checked' : '' }} class="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500">
-                    <span class="text-sm font-medium text-gray-700 dark:text-gray-200">{{ __('messages.equipment.type_digital') }}</span>
+                    <span class="text-sm font-medium text-inherit">{{ __('messages.equipment.type_digital') }}</span>
                 </label>
                 <label class="flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-800/40 px-4 py-3">
                     <input type="hidden" name="is_fixed_asset" value="0">
                     <input type="checkbox" name="is_fixed_asset" value="1" {{ old('is_fixed_asset', $equipment->is_fixed_asset) ? 'checked' : '' }} class="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500">
-                    <span class="text-sm font-medium text-gray-700 dark:text-gray-200">{{ __('messages.equipment.is_fixed_asset') }}</span>
+                    <span class="text-sm font-medium text-inherit">{{ __('messages.equipment.is_fixed_asset') }}</span>
                 </label>
             </div>
 

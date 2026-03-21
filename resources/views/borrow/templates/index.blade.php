@@ -26,11 +26,11 @@
     <section class="data-table-wrap animate-fade-in-up" style="animation-delay: 80ms;">
         @if($templates->isEmpty())
         <div class="empty-state">
-            <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="mx-auto h-12 w-12 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
-            <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-gray-100">{{ __('messages.borrow.no_templates') }}</h3>
-            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.no_templates_hint') }}</p>
+            <h3 class="mt-4 text-lg font-semibold text-inherit">{{ __('messages.borrow.no_templates') }}</h3>
+            <p class="mt-2 text-sm text-inherit">{{ __('messages.borrow.no_templates_hint') }}</p>
             <a href="{{ route('borrow.templates.create') }}" class="btn-primary mt-4">{{ __('messages.borrow.create_first_template') }}</a>
         </div>
         @else
@@ -48,7 +48,7 @@
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                     @foreach($templates as $template)
                     <tr>
-                        <td class="font-semibold text-gray-900 dark:text-gray-100">{{ $template->name }}</td>
+                        <td class="font-semibold text-inherit">{{ $template->name }}</td>
                         <td>{{ $template->equipment->name }}</td>
                         <td>{{ $template->quantity }}</td>
                         <td>{{ $template->class_name ?? '-' }} / {{ $template->subject ?? '-' }}</td>

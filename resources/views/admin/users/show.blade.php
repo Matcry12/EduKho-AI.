@@ -30,18 +30,18 @@
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up" style="animation-delay: 80ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.user.info') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.user.info') }}</h3>
                 <dl class="space-y-3 text-sm">
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.user.email') }}:</dt>
-                        <dd class="text-gray-900 dark:text-gray-100">{{ $user->email }}</dd>
+                        <dt class="text-inherit">{{ __('messages.user.email') }}:</dt>
+                        <dd class="text-inherit">{{ $user->email }}</dd>
                     </div>
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.user.phone') }}:</dt>
-                        <dd class="text-gray-900 dark:text-gray-100">{{ $user->phone ?? '-' }}</dd>
+                        <dt class="text-inherit">{{ __('messages.user.phone') }}:</dt>
+                        <dd class="text-inherit">{{ $user->phone ?? '-' }}</dd>
                     </div>
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.user.role') }}:</dt>
+                        <dt class="text-inherit">{{ __('messages.user.role') }}:</dt>
                         <dd>
                             <span class="table-pill {{ $user->role === 'admin' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300' : 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300' }}">
                                 {{ $user->role === 'admin' ? __('messages.user.admin') : __('messages.user.teacher') }}
@@ -49,11 +49,11 @@
                         </dd>
                     </div>
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.user.department') }}:</dt>
-                        <dd class="text-gray-900 dark:text-gray-100">{{ $user->department?->name ?? '-' }}</dd>
+                        <dt class="text-inherit">{{ __('messages.user.department') }}:</dt>
+                        <dd class="text-inherit">{{ $user->department?->name ?? '-' }}</dd>
                     </div>
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.user.status') }}:</dt>
+                        <dt class="text-inherit">{{ __('messages.user.status') }}:</dt>
                         <dd>
                             <span class="table-pill {{ $user->is_active ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300' }}">
                                 {{ $user->is_active ? __('messages.user.active') : __('messages.user.inactive') }}
@@ -66,21 +66,21 @@
 
         <article class="lg:col-span-2 data-table-wrap">
             <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.user.recent_borrows') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">{{ __('messages.user.recent_borrows') }}</h3>
             </div>
             <div class="divide-y divide-gray-200 dark:divide-gray-700">
                 @forelse($user->borrowRecords as $borrow)
                 <div class="px-6 py-3 flex justify-between items-center gap-4">
                     <div>
-                        <p class="font-semibold text-gray-900 dark:text-gray-100">#{{ $borrow->id }} - {{ $borrow->borrow_date->format('d/m/Y') }}</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ $borrow->class_name }} - {{ __('messages.borrow.period') }} {{ $borrow->period }}</p>
+                        <p class="font-semibold text-inherit">#{{ $borrow->id }} - {{ $borrow->borrow_date->format('d/m/Y') }}</p>
+                        <p class="text-sm text-inherit">{{ $borrow->class_name }} - {{ __('messages.borrow.period') }} {{ $borrow->period }}</p>
                     </div>
                     <span class="table-pill {{ $borrow->status === 'returned' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300' }}">
                         {{ $borrow->status === 'returned' ? __('messages.borrow.returned') : __('messages.borrow.borrowed') }}
                     </span>
                 </div>
                 @empty
-                <p class="px-6 py-8 text-center text-gray-500 dark:text-gray-400">{{ __('messages.user.no_borrows') }}</p>
+                <p class="px-6 py-8 text-center text-inherit">{{ __('messages.user.no_borrows') }}</p>
                 @endforelse
             </div>
         </article>

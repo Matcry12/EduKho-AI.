@@ -20,14 +20,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
-/**
- * Interface cho phép swap LLM provider mà không sửa logic nghiệp vụ
- */
-interface LlmServiceInterface
-{
-    public function processBookingRequest(string $userMessage, User $teacher): array;
-}
-
 class GeminiService implements LlmServiceInterface
 {
     private string $apiKey;

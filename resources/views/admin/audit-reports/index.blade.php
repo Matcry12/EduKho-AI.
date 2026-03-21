@@ -19,8 +19,8 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">{{ __('messages.audit.inventory') }}</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.audit.inventory_desc') }}</p>
+                    <h3 class="font-semibold text-inherit">{{ __('messages.audit.inventory') }}</h3>
+                    <p class="text-sm text-inherit">{{ __('messages.audit.inventory_desc') }}</p>
                 </div>
             </div>
         </a>
@@ -34,8 +34,8 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">{{ __('messages.audit.borrow_audit') }}</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.audit.borrow_desc') }}</p>
+                    <h3 class="font-semibold text-inherit">{{ __('messages.audit.borrow_audit') }}</h3>
+                    <p class="text-sm text-inherit">{{ __('messages.audit.borrow_desc') }}</p>
                 </div>
             </div>
         </a>
@@ -50,8 +50,8 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">{{ __('messages.audit.maintenance') }}</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.audit.maintenance_desc') }}</p>
+                    <h3 class="font-semibold text-inherit">{{ __('messages.audit.maintenance') }}</h3>
+                    <p class="text-sm text-inherit">{{ __('messages.audit.maintenance_desc') }}</p>
                 </div>
             </div>
         </a>
@@ -65,8 +65,8 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h3 class="font-semibold text-gray-900 dark:text-gray-100">{{ __('messages.audit.activity') }}</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.audit.activity_desc') }}</p>
+                    <h3 class="font-semibold text-inherit">{{ __('messages.audit.activity') }}</h3>
+                    <p class="text-sm text-inherit">{{ __('messages.audit.activity_desc') }}</p>
                 </div>
             </div>
         </a>

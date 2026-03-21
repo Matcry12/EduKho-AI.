@@ -10,8 +10,8 @@
         <p class="resource-copy">{{ $maintenance->title }}</p>
         <div class="resource-meta">
             @php
-                $statusColors = ['scheduled' => 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300', 'in_progress' => 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300', 'completed' => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300', 'cancelled' => 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'];
-                $priorityColors = ['low' => 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300', 'medium' => 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300', 'high' => 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300', 'urgent' => 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300'];
+                $statusColors = ['scheduled' => 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300', 'in_progress' => 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300', 'completed' => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300', 'cancelled' => 'bg-gray-100 text-gray-950 dark:bg-gray-800 dark:text-white'];
+                $priorityColors = ['low' => 'bg-gray-100 text-gray-950 dark:bg-gray-800 dark:text-white', 'medium' => 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300', 'high' => 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300', 'urgent' => 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300'];
             @endphp
             <span class="table-pill {{ $statusColors[$maintenance->status] }}">
                 @if($maintenance->status === 'scheduled') {{ __('messages.maintenance.scheduled') }}
@@ -40,16 +40,16 @@
         <div class="card-body">
             <dl class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.equipment') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.equipment') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">
                         {{ $maintenance->equipmentItem->equipment->name }}
-                        <span class="text-gray-500 dark:text-gray-400">({{ $maintenance->equipmentItem->specific_code }})</span>
+                        <span class="text-inherit">({{ $maintenance->equipmentItem->specific_code }})</span>
                     </dd>
                 </div>
 
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.type') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.type') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">
                         @if($maintenance->type === 'preventive') {{ __('messages.maintenance.type_preventive') }}
                         @elseif($maintenance->type === 'corrective') {{ __('messages.maintenance.type_corrective') }}
                         @else {{ __('messages.maintenance.type_inspection') }}
@@ -58,47 +58,47 @@
                 </div>
 
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.scheduled_date') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $maintenance->scheduled_date->format('d/m/Y') }}</dd>
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.scheduled_date') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $maintenance->scheduled_date->format('d/m/Y') }}</dd>
                 </div>
 
                 @if($maintenance->completed_date)
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.completed_date') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $maintenance->completed_date->format('d/m/Y') }}</dd>
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.completed_date') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $maintenance->completed_date->format('d/m/Y') }}</dd>
                 </div>
                 @endif
 
                 @if($maintenance->cost)
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.cost') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ number_format($maintenance->cost) }} VND</dd>
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.cost') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ number_format($maintenance->cost) }} VND</dd>
                 </div>
                 @endif
 
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.creator') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $maintenance->creator->name }}</dd>
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.creator') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $maintenance->creator->name }}</dd>
                 </div>
 
                 @if($maintenance->completer)
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.completer') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $maintenance->completer->name }}</dd>
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.completer') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $maintenance->completer->name }}</dd>
                 </div>
                 @endif
 
                 @if($maintenance->description)
                 <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.description') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $maintenance->description }}</dd>
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.description') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $maintenance->description }}</dd>
                 </div>
                 @endif
 
                 @if($maintenance->notes)
                 <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.maintenance.completion_notes') }}</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $maintenance->notes }}</dd>
+                    <dt class="text-sm font-medium text-inherit">{{ __('messages.maintenance.completion_notes') }}</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $maintenance->notes }}</dd>
                 </div>
                 @endif
             </dl>
@@ -108,7 +108,7 @@
     @if($maintenance->isScheduled())
     <section class="card animate-fade-in-up" style="animation-delay: 120ms;">
         <div class="card-body">
-            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.maintenance.actions') }}</h3>
+            <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.maintenance.actions') }}</h3>
             <div class="flex flex-wrap gap-2">
                 <form method="POST" action="{{ route('admin.maintenance.start', $maintenance) }}">
                     @csrf
@@ -129,7 +129,7 @@
     @if($maintenance->isInProgress())
     <section class="card animate-fade-in-up" style="animation-delay: 140ms;">
         <div class="card-body">
-            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.maintenance.complete_maintenance') }}</h3>
+            <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.maintenance.complete_maintenance') }}</h3>
             <form method="POST" action="{{ route('admin.maintenance.complete', $maintenance) }}">
                 @csrf
                 <div class="space-y-4">

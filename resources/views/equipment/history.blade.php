@@ -20,11 +20,11 @@
         <div class="card-body">
             @if($timeline->isEmpty())
                 <div class="empty-state">
-                    <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="mx-auto h-12 w-12 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-gray-100">{{ __('messages.equipment.no_history') }}</h3>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.no_history_description') }}</p>
+                    <h3 class="mt-4 text-lg font-semibold text-inherit">{{ __('messages.equipment.no_history') }}</h3>
+                    <p class="mt-2 text-sm text-inherit">{{ __('messages.equipment.no_history_description') }}</p>
                 </div>
             @else
                 <div class="flow-root">
@@ -77,10 +77,10 @@
                                         </div>
                                         <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                                             <div>
-                                                <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">{{ $event['title'] }}</p>
-                                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ $event['description'] }}</p>
+                                                <p class="text-sm font-semibold text-inherit">{{ $event['title'] }}</p>
+                                                <p class="text-sm text-inherit">{{ $event['description'] }}</p>
                                             </div>
-                                            <div class="whitespace-nowrap text-right text-sm text-gray-500 dark:text-gray-400">
+                                            <div class="whitespace-nowrap text-right text-sm text-inherit">
                                                 {{ $event['date']->format('d/m/Y') }}
                                             </div>
                                         </div>

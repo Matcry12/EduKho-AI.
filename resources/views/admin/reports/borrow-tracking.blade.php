@@ -57,8 +57,8 @@
                         <td>{{ $records->firstItem() + $index }}</td>
                         <td>{{ $record->borrow_date->format('d/m/Y') }}</td>
                         <td>
-                            <div class="font-semibold text-gray-900 dark:text-gray-100">{{ $record->user->name }}</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ $record->user->department?->name }}</div>
+                            <div class="font-semibold text-inherit">{{ $record->user->name }}</div>
+                            <div class="text-xs text-inherit">{{ $record->user->department?->name }}</div>
                         </td>
                         <td>
                             @foreach($record->details as $detail)

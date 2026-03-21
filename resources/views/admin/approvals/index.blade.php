@@ -16,7 +16,7 @@
         </div>
 
         <div x-show="selectedIds.length > 0" x-cloak class="resource-actions">
-            <span class="text-sm text-gray-600 dark:text-gray-300">{{ __('messages.approval.selected') }} <strong x-text="selectedIds.length"></strong> {{ __('messages.approval.records') }}</span>
+            <span class="text-sm text-inherit">{{ __('messages.approval.selected') }} <strong x-text="selectedIds.length"></strong> {{ __('messages.approval.records') }}</span>
             <button @click="bulkApprove()" class="btn-success text-sm">{{ __('messages.approval.approve_all') }}</button>
             <button @click="openBulkRejectModal()" class="btn-danger text-sm">{{ __('messages.approval.reject_all') }}</button>
         </div>
@@ -52,10 +52,10 @@
                         <td>
                             <input type="checkbox" value="{{ $borrow->id }}" @change="toggleSelect({{ $borrow->id }})" :checked="selectedIds.includes({{ $borrow->id }})" class="rounded border-gray-300 text-teal-600 focus:ring-teal-500">
                         </td>
-                        <td class="font-semibold text-gray-900 dark:text-gray-100">#{{ $borrow->id }}</td>
+                        <td class="font-semibold text-inherit">#{{ $borrow->id }}</td>
                         <td>
-                            <div class="text-sm font-semibold text-gray-900 dark:text-gray-100">{{ $borrow->user->name }}</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ $borrow->user->department?->name }}</div>
+                            <div class="text-sm font-semibold text-inherit">{{ $borrow->user->name }}</div>
+                            <div class="text-xs text-inherit">{{ $borrow->user->department?->name }}</div>
                         </td>
                         <td>
                             @foreach($borrow->details as $detail)
@@ -64,7 +64,7 @@
                         </td>
                         <td>
                             <div>{{ $borrow->borrow_date->format('d/m/Y') }}</div>
-                            <span class="text-xs text-gray-500 dark:text-gray-400">{{ __('messages.borrow.period') }} {{ $borrow->period }} - {{ $borrow->class_name }}</span>
+                            <span class="text-xs text-inherit">{{ __('messages.borrow.period') }} {{ $borrow->period }} - {{ $borrow->class_name }}</span>
                         </td>
                         <td>{{ $borrow->created_at->diffForHumans() }}</td>
                         <td class="text-right space-x-2">
@@ -79,7 +79,7 @@
                     @empty
                     <tr>
                         <td colspan="7" class="empty-state">
-                            <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="mx-auto h-12 w-12 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <p class="mt-2">{{ __('messages.approval.no_pending') }}</p>
@@ -105,7 +105,7 @@
     <div x-show="showBulkRejectModal" x-cloak class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
         <div class="card max-w-md w-full mx-4">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.approval.reject') }} <span x-text="selectedIds.length"></span> {{ __('messages.approval.records') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.approval.reject') }} <span x-text="selectedIds.length"></span> {{ __('messages.approval.records') }}</h3>
                 <form action="{{ route('admin.approvals.bulk-reject') }}" method="POST">
                     @csrf
                     <template x-for="id in selectedIds" :key="id">
@@ -128,7 +128,7 @@
 <div id="rejectModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
     <div class="card max-w-md w-full mx-4">
         <div class="card-body">
-            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.approval.reject_borrow') }}</h3>
+            <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.approval.reject_borrow') }}</h3>
             <form id="rejectForm" method="POST">
                 @csrf
                 <div class="mb-4">

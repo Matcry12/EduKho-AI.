@@ -40,59 +40,59 @@
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up" style="animation-delay: 80ms;">
         <div class="lg:col-span-2 space-y-6">
             <article class="filter-panel">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.borrow.borrow_info') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.borrow.borrow_info') }}</h3>
                 <dl class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.teacher') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->user->name }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.teacher') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->user->name }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.user.department') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->user->department?->name ?? __('messages.borrow.no_department') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.user.department') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->user->department?->name ?? __('messages.borrow.no_department') }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.subject') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->subject }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.subject') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->subject }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.class') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->class_name }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.class') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->class_name }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.lesson_name') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->lesson_name ?? __('messages.borrow.no_lesson') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.lesson_name') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->lesson_name ?? __('messages.borrow.no_lesson') }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.period') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ __('messages.borrow.period') }} {{ $borrowRecord->period }} {{ $borrowRecord->period <= 5 ? '(' . __('messages.borrow.morning') . ')' : '(' . __('messages.borrow.afternoon') . ')' }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.period') }}</dt>
+                        <dd class="font-medium text-inherit">{{ __('messages.borrow.period') }} {{ $borrowRecord->period }} {{ $borrowRecord->period <= 5 ? '(' . __('messages.borrow.morning') . ')' : '(' . __('messages.borrow.afternoon') . ')' }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.borrow_date') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->borrow_date->format('d/m/Y') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.borrow_date') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->borrow_date->format('d/m/Y') }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.deadline') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->expected_return_date->format('d/m/Y') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.deadline') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->expected_return_date->format('d/m/Y') }}</dd>
                     </div>
                     @if($borrowRecord->actual_return_date)
                     <div>
-                        <dt class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.borrow.actual_return_date') }}</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $borrowRecord->actual_return_date->format('d/m/Y H:i') }}</dd>
+                        <dt class="text-sm text-inherit">{{ __('messages.borrow.actual_return_date') }}</dt>
+                        <dd class="font-medium text-inherit">{{ $borrowRecord->actual_return_date->format('d/m/Y H:i') }}</dd>
                     </div>
                     @endif
                 </dl>
 
                 @if($borrowRecord->notes)
                 <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <dt class="text-sm text-gray-500 dark:text-gray-400 mb-1">{{ __('messages.borrow.notes') }}</dt>
-                    <dd class="text-gray-700 dark:text-gray-300">{{ $borrowRecord->notes }}</dd>
+                    <dt class="text-sm text-inherit mb-1">{{ __('messages.borrow.notes') }}</dt>
+                    <dd class="text-inherit">{{ $borrowRecord->notes }}</dd>
                 </div>
                 @endif
             </article>
 
             <article class="data-table-wrap">
                 <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.borrow.borrowed_equipment') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit">{{ __('messages.borrow.borrowed_equipment') }}</h3>
                     <span class="table-pill bg-cyan-100 text-cyan-700 dark:bg-cyan-900/50 dark:text-cyan-300">{{ $borrowRecord->details->count() }} {{ __('messages.borrow.items') }}</span>
                 </div>
                 <div class="overflow-x-auto">
@@ -109,11 +109,11 @@
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                             @foreach($borrowRecord->details as $detail)
                             <tr>
-                                <td class="font-semibold text-gray-900 dark:text-gray-100">{{ $detail->equipmentItem->equipment->name }}</td>
+                                <td class="font-semibold text-inherit">{{ $detail->equipmentItem->equipment->name }}</td>
                                 <td>{{ $detail->equipmentItem->specific_code }}</td>
                                 <td>{{ $detail->equipmentItem->room?->name ?? '-' }}</td>
                                 <td>
-                                    <span class="table-pill bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">{{ $detail->condition_before ?? '-' }}</span>
+                                    <span class="table-pill bg-gray-100 text-gray-950 dark:bg-gray-800 dark:text-white">{{ $detail->condition_before ?? '-' }}</span>
                                 </td>
                                 <td>
                                     @if($detail->condition_after)
@@ -131,7 +131,7 @@
                                     <p class="text-xs text-rose-600 dark:text-rose-300 mt-1">{{ $detail->damage_notes }}</p>
                                     @endif
                                     @else
-                                    <span class="text-gray-400 dark:text-gray-500">-</span>
+                                    <span class="text-inherit">-</span>
                                     @endif
                                 </td>
                             </tr>
@@ -144,7 +144,7 @@
             @if($borrowRecord->isActive() && $borrowRecord->isApproved() && ($borrowRecord->user_id === auth()->id() || auth()->user()->isAdmin()))
             <article class="card">
                 <div class="card-header">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.borrow.return_equipment') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit">{{ __('messages.borrow.return_equipment') }}</h3>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('borrow.return', $borrowRecord) }}" method="POST">
@@ -153,8 +153,8 @@
                             @foreach($borrowRecord->details as $detail)
                             <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50/70 dark:bg-gray-800/50 p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                                 <div>
-                                    <p class="font-medium text-gray-900 dark:text-gray-100">{{ $detail->equipmentItem->equipment->name }}</p>
-                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ $detail->equipmentItem->specific_code }}</p>
+                                    <p class="font-medium text-inherit">{{ $detail->equipmentItem->equipment->name }}</p>
+                                    <p class="text-sm text-inherit">{{ $detail->equipmentItem->specific_code }}</p>
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center gap-2">
                                     <select name="conditions[{{ $detail->equipment_item_id }}]" class="form-select text-sm">
@@ -180,11 +180,11 @@
             @if($borrowRecord->approver || $borrowRecord->rejection_reason)
             <article class="card">
                 <div class="card-body">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.borrow.approval_info') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.borrow.approval_info') }}</h3>
                     @if($borrowRecord->approver)
                     <div class="space-y-2">
-                        <p class="text-sm text-gray-700 dark:text-gray-300"><span class="text-gray-500 dark:text-gray-400">{{ __('messages.borrow.approver') }}:</span> {{ $borrowRecord->approver->name }}</p>
-                        <p class="text-sm text-gray-700 dark:text-gray-300"><span class="text-gray-500 dark:text-gray-400">{{ __('messages.borrow.approved_time') }}:</span> {{ $borrowRecord->approved_at?->format('d/m/Y H:i') }}</p>
+                        <p class="text-sm text-inherit"><span class="text-inherit">{{ __('messages.borrow.approver') }}:</span> {{ $borrowRecord->approver->name }}</p>
+                        <p class="text-sm text-inherit"><span class="text-inherit">{{ __('messages.borrow.approved_time') }}:</span> {{ $borrowRecord->approved_at?->format('d/m/Y H:i') }}</p>
                     </div>
                     @endif
                     @if($borrowRecord->rejection_reason)
@@ -199,12 +199,12 @@
             @if($borrowRecord->aiChatLog)
             <article class="card">
                 <div class="card-body">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.borrow.created_by_ai') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.borrow.created_by_ai') }}</h3>
                     <div class="rounded-xl bg-cyan-50/80 dark:bg-cyan-900/25 p-3">
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">{{ __('messages.borrow.teacher_request') }}:</p>
-                        <p class="text-sm text-gray-700 dark:text-gray-200">{{ $borrowRecord->aiChatLog->user_message }}</p>
+                        <p class="text-xs text-inherit mb-1">{{ __('messages.borrow.teacher_request') }}:</p>
+                        <p class="text-sm text-inherit">{{ $borrowRecord->aiChatLog->user_message }}</p>
                     </div>
-                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-3">
+                    <p class="text-xs text-inherit mt-3">
                         {{ __('messages.borrow.processing_time') }} {{ $borrowRecord->aiChatLog->response_time_ms }}ms
                     </p>
                 </div>
@@ -213,7 +213,7 @@
 
             <article class="card">
                 <div class="card-body">
-                    <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.borrow.actions') }}</h3>
+                    <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.borrow.actions') }}</h3>
                     <div class="space-y-2">
                         <a href="{{ route('borrow.print', $borrowRecord) }}" target="_blank" class="btn-info w-full">{{ __('messages.borrow.print_pdf') }}</a>
                         <a href="{{ route('borrow.index') }}" class="btn-secondary w-full">{{ __('messages.borrow.back_to_list') }}</a>
@@ -236,7 +236,7 @@
 <div id="rejectModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
     <div class="card max-w-md w-full mx-4">
         <div class="card-body">
-            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.approval.reject_borrow') }}</h3>
+            <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.approval.reject_borrow') }}</h3>
             <form action="{{ route('admin.approvals.reject', $borrowRecord) }}" method="POST">
                 @csrf
                 <div class="mb-4">

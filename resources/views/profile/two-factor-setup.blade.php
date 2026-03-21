@@ -16,8 +16,8 @@
     <section class="card animate-fade-in-up" style="animation-delay: 80ms;">
         <div class="card-body space-y-6">
             <div>
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{{ __('messages.profile.step_1_title') }}</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <h3 class="font-display text-lg font-semibold text-inherit mb-2">{{ __('messages.profile.step_1_title') }}</h3>
+                <p class="text-sm text-inherit mb-4">
                     {{ __('messages.profile.step_1_description') }}
                 </p>
                 <div class="flex justify-center">
@@ -26,16 +26,16 @@
             </div>
 
             <div>
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{{ __('messages.profile.manual_entry') }}</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">{{ __('messages.profile.manual_entry_description') }}</p>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-2">{{ __('messages.profile.manual_entry') }}</h3>
+                <p class="text-sm text-inherit mb-2">{{ __('messages.profile.manual_entry_description') }}</p>
                 <div class="rounded-xl bg-gray-50 dark:bg-gray-800 p-4 text-center border border-gray-200 dark:border-gray-700">
-                    <code class="text-lg font-mono tracking-wider text-gray-900 dark:text-gray-100">{{ $secret }}</code>
+                    <code class="text-lg font-mono tracking-wider text-inherit">{{ $secret }}</code>
                 </div>
             </div>
 
             <div class="pt-2">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{{ __('messages.profile.step_2_title') }}</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">{{ __('messages.profile.step_2_description') }}</p>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-2">{{ __('messages.profile.step_2_title') }}</h3>
+                <p class="text-sm text-inherit mb-4">{{ __('messages.profile.step_2_description') }}</p>
 
                 <form method="POST" action="{{ route('profile.two-factor.confirm') }}">
                     @csrf

@@ -14,7 +14,7 @@
             @if($teachingPlan->hasBorrowRecord())
             <span class="table-pill bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Da dang ky</span>
             @elseif($teachingPlan->planned_date < now())
-            <span class="table-pill bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">Da qua</span>
+            <span class="table-pill bg-gray-100 text-gray-950 dark:bg-gray-800 dark:text-white">Da qua</span>
             @else
             <span class="table-pill bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">Chua dang ky</span>
             @endif
@@ -29,38 +29,38 @@
 
     <section class="card animate-fade-in-up" style="animation-delay: 80ms;">
         <div class="card-body">
-            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">Thong tin ke hoach</h3>
+            <h3 class="font-display text-lg font-semibold text-inherit mb-4">Thong tin ke hoach</h3>
             <dl class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <dt class="text-sm text-gray-500 dark:text-gray-400">Mon hoc</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $teachingPlan->subject }}</dd>
+                    <dt class="text-sm text-inherit">Mon hoc</dt>
+                    <dd class="font-medium text-inherit">{{ $teachingPlan->subject }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm text-gray-500 dark:text-gray-400">Tuan</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">Tuan {{ $teachingPlan->week }}</dd>
+                    <dt class="text-sm text-inherit">Tuan</dt>
+                    <dd class="font-medium text-inherit">Tuan {{ $teachingPlan->week }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm text-gray-500 dark:text-gray-400">Ngay du kien</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $teachingPlan->planned_date->format('d/m/Y') }}</dd>
+                    <dt class="text-sm text-inherit">Ngay du kien</dt>
+                    <dd class="font-medium text-inherit">{{ $teachingPlan->planned_date->format('d/m/Y') }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm text-gray-500 dark:text-gray-400">Tiet</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">Tiet {{ $teachingPlan->period }} {{ $teachingPlan->period <= 5 ? '(Sang)' : '(Chieu)' }}</dd>
+                    <dt class="text-sm text-inherit">Tiet</dt>
+                    <dd class="font-medium text-inherit">Tiet {{ $teachingPlan->period }} {{ $teachingPlan->period <= 5 ? '(Sang)' : '(Chieu)' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm text-gray-500 dark:text-gray-400">Thiet bi</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $teachingPlan->equipment->name }}</dd>
+                    <dt class="text-sm text-inherit">Thiet bi</dt>
+                    <dd class="font-medium text-inherit">{{ $teachingPlan->equipment->name }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm text-gray-500 dark:text-gray-400">So luong can</dt>
-                    <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $teachingPlan->quantity_needed }} {{ $teachingPlan->equipment->unit }}</dd>
+                    <dt class="text-sm text-inherit">So luong can</dt>
+                    <dd class="font-medium text-inherit">{{ $teachingPlan->quantity_needed }} {{ $teachingPlan->equipment->unit }}</dd>
                 </div>
             </dl>
 
             @if($teachingPlan->notes)
             <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-                <dt class="text-sm text-gray-500 dark:text-gray-400 mb-1">Ghi chu</dt>
-                <dd class="text-gray-700 dark:text-gray-300">{{ $teachingPlan->notes }}</dd>
+                <dt class="text-sm text-inherit mb-1">Ghi chu</dt>
+                <dd class="text-inherit">{{ $teachingPlan->notes }}</dd>
             </div>
             @endif
         </div>

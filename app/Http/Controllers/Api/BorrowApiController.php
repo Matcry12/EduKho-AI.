@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BorrowRecord;
 use App\Models\BorrowDetail;
 use App\Models\Equipment;
+use App\Models\EquipmentItem;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,15 +48,42 @@ class BorrowApiController extends Controller
         ]);
 
         $equipment = Equipment::findOrFail($validated['equipment_id']);
-        $availableItems = $equipment->items()->available()->take($validated['quantity'])->get();
 
-        if ($availableItems->count() < $validated['quantity']) {
+        $availableItemIds = $equipment->items()
+            ->available()
+            ->pluck('id');
+
+        if ($availableItemIds->count() < $validated['quantity']) {
             return response()->json([
-                'message' => "Chi con {$availableItems->count()} {$equipment->unit} kha dung.",
+                'message' => "Chi con {$availableItemIds->count()} {$equipment->unit} kha dung.",
             ], 422);
         }
 
-        $borrowRecord = DB::transaction(function () use ($validated, $availableItems, $equipment) {
+        $conflictingItemIds = BorrowDetail::query()
+            ->whereIn('equipment_item_id', $availableItemIds)
+            ->whereHas('borrowRecord', function ($query) use ($validated) {
+                $query->conflictsWith($validated['borrow_date'], $validated['expected_return_date']);
+            })
+            ->distinct()
+            ->pluck('equipment_item_id');
+
+        $selectableItemsQuery = EquipmentItem::query()->whereIn('id', $availableItemIds);
+
+        if ($conflictingItemIds->isNotEmpty()) {
+            $selectableItemsQuery->whereNotIn('id', $conflictingItemIds);
+        }
+
+        $selectedItems = $selectableItemsQuery
+            ->take($validated['quantity'])
+            ->get();
+
+        if ($selectedItems->count() < $validated['quantity']) {
+            return response()->json([
+                'message' => 'Thiet bi da duoc dang ky muon trong khoang thoi gian nay.',
+            ], 422);
+        }
+
+        $borrowRecord = DB::transaction(function () use ($validated, $selectedItems, $equipment) {
             $approvalStatus = $equipment->isHighSecurity() ? 'pending' : 'auto_approved';
 
             $borrowRecord = BorrowRecord::create([
@@ -71,7 +99,7 @@ class BorrowApiController extends Controller
                 'notes' => $validated['notes'],
             ]);
 
-            foreach ($availableItems as $item) {
+            foreach ($selectedItems as $item) {
                 BorrowDetail::create([
                     'borrow_record_id' => $borrowRecord->id,
                     'equipment_item_id' => $item->id,
@@ -195,20 +223,24 @@ class BorrowApiController extends Controller
 
         $equipment = Equipment::findOrFail($validated['equipment_id']);
 
-        $conflictingRecords = BorrowRecord::conflictsWith(
-            $validated['borrow_date'],
-            $validated['expected_return_date']
-        )->whereHas('details.equipmentItem', function ($q) use ($equipment) {
-            $q->where('equipment_id', $equipment->id);
-        })->count();
+        $conflictingItems = BorrowDetail::query()
+            ->whereHas('equipmentItem', function ($query) use ($equipment) {
+                $query->where('equipment_id', $equipment->id);
+            })
+            ->whereHas('borrowRecord', function ($query) use ($validated) {
+                $query->conflictsWith($validated['borrow_date'], $validated['expected_return_date']);
+            })
+            ->distinct()
+            ->count('equipment_item_id');
 
-        $availableCount = $equipment->availableCount();
-        $hasConflict = ($availableCount - $conflictingRecords) < $validated['quantity'];
+        $totalItems = $equipment->items()->count();
+        $availableCount = max(0, $totalItems - $conflictingItems);
+        $hasConflict = $availableCount < $validated['quantity'];
 
         return response()->json([
             'has_conflict' => $hasConflict,
             'available_count' => $availableCount,
-            'conflicting_records' => $conflictingRecords,
+            'conflicting_items' => $conflictingItems,
         ]);
     }
 }

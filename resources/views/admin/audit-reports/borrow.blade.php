@@ -16,11 +16,11 @@
     <section class="filter-panel animate-fade-in-up" style="animation-delay: 80ms;">
         <form method="GET" class="flex flex-wrap gap-3">
             <div>
-                <label for="from_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tu ngay</label>
+                <label for="from_date" class="block text-sm font-medium text-inherit mb-1">Tu ngay</label>
                 <input id="from_date" name="from_date" type="date" value="{{ request('from_date', \Illuminate\Support\Carbon::parse($fromDate)->format('Y-m-d')) }}" class="form-input">
             </div>
             <div>
-                <label for="to_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Den ngay</label>
+                <label for="to_date" class="block text-sm font-medium text-inherit mb-1">Den ngay</label>
                 <input id="to_date" name="to_date" type="date" value="{{ request('to_date', \Illuminate\Support\Carbon::parse($toDate)->format('Y-m-d')) }}" class="form-input">
             </div>
             <div class="flex items-end">
@@ -30,16 +30,16 @@
     </section>
 
     <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 animate-fade-in-up" style="animation-delay: 120ms;">
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Dang muon</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($borrowStats->get('active')->count ?? 0) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Da tra</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($borrowStats->get('returned')->count ?? 0) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Qua han</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($borrowStats->get('overdue')->count ?? 0) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Nguoi muon noi bat</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($topBorrowers->count()) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Dang muon</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($borrowStats->get('active')->count ?? 0) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Da tra</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($borrowStats->get('returned')->count ?? 0) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Qua han</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($borrowStats->get('overdue')->count ?? 0) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Nguoi muon noi bat</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($topBorrowers->count()) }}</p></div></article>
     </section>
 
     <section class="grid gap-4 lg:grid-cols-2 animate-fade-in-up" style="animation-delay: 160ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Top nguoi muon</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Top nguoi muon</h3>
                 <div class="mt-4 overflow-x-auto">
                     <table class="data-table">
                         <thead>
@@ -67,7 +67,7 @@
 
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Xu huong theo thang</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Xu huong theo thang</h3>
                 <div class="mt-4 overflow-x-auto">
                     <table class="data-table">
                         <thead>
@@ -94,7 +94,7 @@
 
     <section class="card animate-fade-in-up" style="animation-delay: 200ms;">
         <div class="card-body">
-            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Danh sach qua han</h3>
+            <h3 class="font-display text-lg font-semibold text-inherit">Danh sach qua han</h3>
             <div class="mt-4 overflow-x-auto">
                 <table class="data-table">
                     <thead>

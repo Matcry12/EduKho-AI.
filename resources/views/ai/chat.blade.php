@@ -25,9 +25,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                 </div>
-                <div class="ml-3 bg-white dark:bg-gray-800 rounded-xl px-4 py-3 max-w-lg border border-gray-200 dark:border-gray-700">
-                    <p class="text-gray-800 dark:text-gray-100">{{ __('messages.ai.greeting', ['name' => auth()->user()->name]) }}</p>
-                    <p class="text-gray-500 dark:text-gray-400 text-xs mt-1">{{ __('messages.ai.example') }}</p>
+                <div class="ml-3 bg-slate-800 dark:bg-gray-800 text-white rounded-xl px-4 py-3 max-w-lg border border-slate-700 dark:border-gray-700">
+                    <p class="text-inherit">{{ __('messages.ai.greeting', ['name' => auth()->user()->name]) }}</p>
+                    <p class="text-inherit text-xs mt-1">{{ __('messages.ai.example') }}</p>
                 </div>
             </div>
 
@@ -40,8 +40,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
                             </div>
-                            <div class="ml-3 bg-white dark:bg-gray-800 rounded-xl px-4 py-3 max-w-lg border border-gray-200 dark:border-gray-700">
-                                <p class="text-gray-800 dark:text-gray-100" x-text="msg.content"></p>
+                            <div class="ml-3 bg-slate-800 dark:bg-gray-800 text-white rounded-xl px-4 py-3 max-w-lg border border-slate-700 dark:border-gray-700">
+                                <p class="text-inherit" x-text="msg.content"></p>
                             </div>
                         </div>
                     </template>
@@ -60,8 +60,8 @@
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                 </div>
-                <div class="ml-3 bg-white dark:bg-gray-800 rounded-xl px-4 py-3 border border-gray-200 dark:border-gray-700">
-                    <p class="text-gray-500 dark:text-gray-400">{{ __('messages.ai.processing') }}</p>
+                <div class="ml-3 bg-slate-800 dark:bg-gray-800 text-white rounded-xl px-4 py-3 border border-slate-700 dark:border-gray-700">
+                    <p class="text-inherit">{{ __('messages.ai.processing') }}</p>
                 </div>
             </div>
         </div>
@@ -90,13 +90,13 @@
 
     <section class="animate-fade-in-up" style="animation-delay: 120ms;">
         <div class="flex flex-wrap gap-2">
-            <button @click="newMessage = 'Mượn kính hiển vi cho tiết 2 sáng mai'" class="table-pill bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 transition">
+            <button @click="newMessage = 'Mượn kính hiển vi cho tiết 2 sáng mai'" class="table-pill bg-slate-800 dark:bg-gray-800 border border-slate-700 dark:border-gray-700 hover:bg-slate-700 dark:hover:bg-gray-700 text-white transition">
                 {{ __('messages.ai.quick_actions.borrow_microscope') }}
             </button>
-            <button @click="newMessage = 'Kiểm tra còn bao nhiêu bộ thực hành Động điện'" class="table-pill bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 transition">
+            <button @click="newMessage = 'Kiểm tra còn bao nhiêu bộ thực hành Động điện'" class="table-pill bg-slate-800 dark:bg-gray-800 border border-slate-700 dark:border-gray-700 hover:bg-slate-700 dark:hover:bg-gray-700 text-white transition">
                 {{ __('messages.ai.quick_actions.check_inventory') }}
             </button>
-            <button @click="newMessage = 'Mượn máy chiếu cho lớp 11A3 tiết 5'" class="table-pill bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 transition">
+            <button @click="newMessage = 'Mượn máy chiếu cho lớp 11A3 tiết 5'" class="table-pill bg-slate-800 dark:bg-gray-800 border border-slate-700 dark:border-gray-700 hover:bg-slate-700 dark:hover:bg-gray-700 text-white transition">
                 {{ __('messages.ai.quick_actions.borrow_projector') }}
             </button>
         </div>

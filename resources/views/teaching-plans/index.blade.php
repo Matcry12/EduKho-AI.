@@ -43,12 +43,12 @@
                     <tr class="{{ $plan->planned_date < now() ? 'bg-gray-50/70 dark:bg-gray-800/35' : '' }}">
                         <td>{{ __('messages.teaching_plan.week') }} {{ $plan->week }}</td>
                         <td>
-                            <div class="font-semibold text-gray-900 dark:text-gray-100">{{ $plan->planned_date->format('d/m/Y') }}</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ __('messages.teaching_plan.period') }} {{ $plan->period }}</div>
+                            <div class="font-semibold text-inherit">{{ $plan->planned_date->format('d/m/Y') }}</div>
+                            <div class="text-xs text-inherit">{{ __('messages.teaching_plan.period') }} {{ $plan->period }}</div>
                         </td>
                         <td>
-                            <p class="font-semibold text-gray-900 dark:text-gray-100">{{ $plan->subject }}</p>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $plan->lesson_name }}</p>
+                            <p class="font-semibold text-inherit">{{ $plan->subject }}</p>
+                            <p class="text-sm text-inherit">{{ $plan->lesson_name }}</p>
                         </td>
                         <td>{{ $plan->equipment->name }}</td>
                         <td>{{ $plan->quantity_needed }} {{ $plan->equipment->unit }}</td>
@@ -56,7 +56,7 @@
                             @if($plan->hasBorrowRecord())
                             <span class="table-pill bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">{{ __('messages.teaching_plan.registered') }}</span>
                             @elseif($plan->planned_date < now())
-                            <span class="table-pill bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">{{ __('messages.teaching_plan.passed') }}</span>
+                            <span class="table-pill bg-gray-100 text-gray-950 dark:bg-gray-800 dark:text-white">{{ __('messages.teaching_plan.passed') }}</span>
                             @else
                             <span class="table-pill bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">{{ __('messages.teaching_plan.not_registered') }}</span>
                             @endif

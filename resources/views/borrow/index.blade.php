@@ -77,18 +77,18 @@
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                     @forelse($borrows as $borrow)
                     <tr>
-                        <td class="font-semibold text-gray-900 dark:text-white">#{{ $borrow->id }}</td>
+                        <td class="font-semibold text-inherit">#{{ $borrow->id }}</td>
                         @if(auth()->user()->isAdmin())
                         <td>{{ $borrow->user->name }}</td>
                         @endif
                         <td>
                             @foreach($borrow->details as $detail)
-                            <div class="text-gray-900 dark:text-gray-100">{{ $detail->equipmentItem->equipment->name }}</div>
+                            <div class="text-inherit">{{ $detail->equipmentItem->equipment->name }}</div>
                             @endforeach
                         </td>
                         <td>
                             <div>{{ $borrow->borrow_date->format('d/m/Y') }}</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ __('messages.borrow.period') }} {{ $borrow->period }}</div>
+                            <div class="text-xs text-inherit">{{ __('messages.borrow.period') }} {{ $borrow->period }}</div>
                         </td>
                         <td>
                             <span class="table-pill

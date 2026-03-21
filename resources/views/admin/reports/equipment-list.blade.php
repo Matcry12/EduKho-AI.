@@ -36,7 +36,7 @@
     @forelse($equipments->groupBy('category_subject') as $subject => $items)
     <section class="data-table-wrap animate-fade-in-up" style="animation-delay: 120ms;">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
-            <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">{{ $subject }}</h3>
+            <h3 class="font-display text-lg font-semibold text-inherit">{{ $subject }}</h3>
             <span class="table-pill bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">{{ $items->count() }} {{ __('messages.equipment.title') }}</span>
         </div>
         <div class="overflow-x-auto">
@@ -56,10 +56,10 @@
                     @foreach($items as $index => $eq)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td class="font-mono text-gray-700 dark:text-gray-300">{{ $eq->base_code }}</td>
-                        <td class="font-semibold text-gray-900 dark:text-gray-100">{{ $eq->name }}</td>
+                        <td class="font-mono text-inherit">{{ $eq->base_code }}</td>
+                        <td class="font-semibold text-inherit">{{ $eq->name }}</td>
                         <td>{{ $eq->unit }}</td>
-                        <td class="font-semibold text-gray-900 dark:text-gray-100">{{ $eq->items->count() }}</td>
+                        <td class="font-semibold text-inherit">{{ $eq->items->count() }}</td>
                         <td>
                             <span class="table-pill bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
                                 {{ $eq->items->where('status', 'available')->count() }}

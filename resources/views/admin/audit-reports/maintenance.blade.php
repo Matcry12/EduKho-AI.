@@ -16,11 +16,11 @@
     <section class="filter-panel animate-fade-in-up" style="animation-delay: 80ms;">
         <form method="GET" class="flex flex-wrap gap-3">
             <div>
-                <label for="from_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tu ngay</label>
+                <label for="from_date" class="block text-sm font-medium text-inherit mb-1">Tu ngay</label>
                 <input id="from_date" name="from_date" type="date" value="{{ request('from_date', \Illuminate\Support\Carbon::parse($fromDate)->format('Y-m-d')) }}" class="form-input">
             </div>
             <div>
-                <label for="to_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Den ngay</label>
+                <label for="to_date" class="block text-sm font-medium text-inherit mb-1">Den ngay</label>
                 <input id="to_date" name="to_date" type="date" value="{{ request('to_date', \Illuminate\Support\Carbon::parse($toDate)->format('Y-m-d')) }}" class="form-input">
             </div>
             <div class="flex items-end">
@@ -30,16 +30,16 @@
     </section>
 
     <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 animate-fade-in-up" style="animation-delay: 120ms;">
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Da len lich</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($maintenanceStats->get('scheduled')->count ?? 0) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Dang xu ly</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($maintenanceStats->get('in_progress')->count ?? 0) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Chi phi bao tri</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($totalCost) }}</p></div></article>
-        <article class="card"><div class="card-body"><p class="text-sm text-gray-500 dark:text-gray-400">Chi phi hu hong</p><p class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{{ number_format($totalDamageCost, 2) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Da len lich</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($maintenanceStats->get('scheduled')->count ?? 0) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Dang xu ly</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($maintenanceStats->get('in_progress')->count ?? 0) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Chi phi bao tri</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($totalCost) }}</p></div></article>
+        <article class="card"><div class="card-body"><p class="text-sm text-inherit">Chi phi hu hong</p><p class="mt-2 text-3xl font-bold text-inherit">{{ number_format($totalDamageCost, 2) }}</p></div></article>
     </section>
 
     <section class="grid gap-4 lg:grid-cols-2 animate-fade-in-up" style="animation-delay: 160ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Thong ke bao tri</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Thong ke bao tri</h3>
                 <div class="mt-4 overflow-x-auto">
                     <table class="data-table">
                         <thead>
@@ -65,7 +65,7 @@
 
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white">Thong ke hu hong</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit">Thong ke hu hong</h3>
                 <div class="mt-4 overflow-x-auto">
                     <table class="data-table">
                         <thead>

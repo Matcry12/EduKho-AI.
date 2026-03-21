@@ -69,14 +69,14 @@
     <div class="card max-w-md w-full mx-4">
         <div class="card-body">
             <div class="flex justify-between items-start mb-4">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white" id="modalTitle">{{ __('messages.borrow.detail') }}</h3>
-                <button onclick="document.getElementById('eventModal').classList.add('hidden')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                <h3 class="font-display text-lg font-semibold text-inherit" id="modalTitle">{{ __('messages.borrow.detail') }}</h3>
+                <button onclick="document.getElementById('eventModal').classList.add('hidden')" class="text-gray-900 hover:text-gray-900 dark:hover:text-gray-900">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
             </div>
-            <div id="modalContent" class="space-y-2 text-sm text-gray-600 dark:text-gray-300"></div>
+            <div id="modalContent" class="space-y-2 text-sm text-inherit"></div>
             <div class="mt-6 flex justify-end">
                 <a id="modalLink" href="#" class="btn-primary">{{ __('messages.view') }}</a>
             </div>

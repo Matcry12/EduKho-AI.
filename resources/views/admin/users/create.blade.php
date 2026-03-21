@@ -6,7 +6,7 @@
 <div class="max-w-2xl mx-auto">
     <div class="card">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{{ __('messages.user.add_new') }}</h2>
+            <h2 class="text-xl font-semibold text-inherit">{{ __('messages.user.add_new') }}</h2>
         </div>
         <form action="{{ route('admin.users.store') }}" method="POST" class="p-6 space-y-6">
             @csrf

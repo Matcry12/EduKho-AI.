@@ -24,27 +24,27 @@
                     <span class="text-2xl font-bold text-cyan-700 dark:text-cyan-300">{{ strtoupper(substr($user->name, 0, 1)) }}</span>
                 </div>
                 <div>
-                    <h3 class="font-display text-xl font-semibold text-gray-900 dark:text-gray-100">{{ $user->name }}</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ $user->role === 'admin' ? __('messages.user.admin') : __('messages.user.teacher') }}</p>
+                    <h3 class="font-display text-xl font-semibold text-inherit">{{ $user->name }}</h3>
+                    <p class="text-sm text-inherit">{{ $user->role === 'admin' ? __('messages.user.admin') : __('messages.user.teacher') }}</p>
                 </div>
             </div>
 
             <div class="border-t border-gray-200 dark:border-gray-700 mt-6 pt-6">
                 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.profile.email') }}</dt>
-                        <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $user->email }}</dd>
+                        <dt class="text-sm font-medium text-inherit">{{ __('messages.profile.email') }}</dt>
+                        <dd class="mt-1 text-sm text-inherit">{{ $user->email }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.profile.phone') }}</dt>
-                        <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $user->phone ?? __('messages.profile.not_updated') }}</dd>
+                        <dt class="text-sm font-medium text-inherit">{{ __('messages.profile.phone') }}</dt>
+                        <dd class="mt-1 text-sm text-inherit">{{ $user->phone ?? __('messages.profile.not_updated') }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.profile.department') }}</dt>
-                        <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $user->department?->name ?? __('messages.profile.not_assigned') }}</dd>
+                        <dt class="text-sm font-medium text-inherit">{{ __('messages.profile.department') }}</dt>
+                        <dd class="mt-1 text-sm text-inherit">{{ $user->department?->name ?? __('messages.profile.not_assigned') }}</dd>
                     </div>
                     <div>
-                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.profile.status') }}</dt>
+                        <dt class="text-sm font-medium text-inherit">{{ __('messages.profile.status') }}</dt>
                         <dd class="mt-1">
                             <span class="table-pill {{ $user->is_active ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300' }}">
                                 {{ $user->is_active ? __('messages.profile.active') : __('messages.profile.inactive') }}
@@ -52,8 +52,8 @@
                         </dd>
                     </div>
                     <div>
-                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ __('messages.profile.created_at') }}</dt>
-                        <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $user->created_at->format('d/m/Y') }}</dd>
+                        <dt class="text-sm font-medium text-inherit">{{ __('messages.profile.created_at') }}</dt>
+                        <dd class="mt-1 text-sm text-inherit">{{ $user->created_at->format('d/m/Y') }}</dd>
                     </div>
                 </dl>
             </div>

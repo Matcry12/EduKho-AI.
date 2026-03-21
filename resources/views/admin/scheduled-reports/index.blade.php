@@ -29,20 +29,20 @@
                     @forelse($reports as $report)
                     <tr>
                         <td>
-                            <div class="font-medium text-gray-900 dark:text-gray-100">{{ $report->name }}</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">{{ count($report->recipients) }} {{ __('messages.scheduled_report.recipients') }}</div>
+                            <div class="font-medium text-inherit">{{ $report->name }}</div>
+                            <div class="text-sm text-inherit">{{ count($report->recipients) }} {{ __('messages.scheduled_report.recipients') }}</div>
                         </td>
-                        <td class="text-gray-500 dark:text-gray-400">
+                        <td class="text-inherit">
                             {{ $report->report_type_label }}
                         </td>
-                        <td class="text-gray-500 dark:text-gray-400">
+                        <td class="text-inherit">
                             {{ $report->frequency_label }} - {{ $report->send_time }}
                         </td>
-                        <td class="text-gray-500 dark:text-gray-400">
+                        <td class="text-inherit">
                             {{ $report->next_run_at ? $report->next_run_at->format('d/m/Y H:i') : '-' }}
                         </td>
                         <td>
-                            <span class="table-pill {{ $report->is_active ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300' }}">
+                            <span class="table-pill {{ $report->is_active ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-gray-100 text-gray-950 dark:bg-gray-800 dark:text-white' }}">
                                 {{ $report->is_active ? __('messages.scheduled_report.active') : __('messages.scheduled_report.paused') }}
                             </span>
                         </td>
@@ -53,7 +53,7 @@
                                     {{ $report->is_active ? __('messages.scheduled_report.pause') : __('messages.scheduled_report.activate') }}
                                 </button>
                             </form>
-                            <a href="{{ route('admin.scheduled-reports.edit', $report) }}" class="text-sm font-semibold text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">{{ __('messages.scheduled_report.edit') }}</a>
+                            <a href="{{ route('admin.scheduled-reports.edit', $report) }}" class="text-sm font-semibold text-gray-900 hover:text-inherit dark:hover:text-gray-200">{{ __('messages.scheduled_report.edit') }}</a>
                             <form action="{{ route('admin.scheduled-reports.destroy', $report) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
@@ -65,7 +65,7 @@
                     @empty
                     <tr>
                         <td colspan="6" class="empty-state">
-                            <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="mx-auto h-12 w-12 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <p class="mt-2">{{ __('messages.scheduled_report.no_reports') }}</p>

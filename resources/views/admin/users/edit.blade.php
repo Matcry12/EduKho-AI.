@@ -6,7 +6,7 @@
 <div class="max-w-2xl mx-auto">
     <div class="card">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{{ __('messages.edit') }}: {{ $user->name }}</h2>
+            <h2 class="text-xl font-semibold text-inherit">{{ __('messages.edit') }}: {{ $user->name }}</h2>
         </div>
         <form action="{{ route('admin.users.update', $user) }}" method="POST" class="p-6 space-y-6">
             @csrf @method('PUT')
@@ -55,7 +55,7 @@
             <div class="flex items-center">
                 <input type="hidden" name="is_active" value="0">
                 <input type="checkbox" name="is_active" value="1" id="is_active" {{ old('is_active', $user->is_active) ? 'checked' : '' }} class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500">
-                <label for="is_active" class="ml-2 text-sm text-gray-700 dark:text-gray-300">{{ __('messages.user.activate_account') }}</label>
+                <label for="is_active" class="ml-2 text-sm text-inherit">{{ __('messages.user.activate_account') }}</label>
             </div>
             <div class="flex justify-end space-x-4">
                 <a href="{{ route('admin.users.show', $user) }}" class="btn-secondary">{{ __('messages.cancel') }}</a>

@@ -56,7 +56,7 @@
     <!-- Activity Logs Table -->
     <section class="data-table-wrap animate-fade-in-up" style="animation-delay: 120ms;">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ __('messages.activity_log.title') }}</h3>
+            <h3 class="text-lg font-semibold text-inherit">{{ __('messages.activity_log.title') }}</h3>
         </div>
 
         <div class="overflow-x-auto">
@@ -74,14 +74,14 @@
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                     @forelse($logs as $log)
                         <tr>
-                            <td class="text-gray-600 dark:text-gray-300">
+                            <td class="text-inherit">
                                 {{ $log->created_at->format('d/m/Y H:i:s') }}
                             </td>
                             <td>
-                                <div class="font-semibold text-gray-900 dark:text-white">
+                                <div class="font-semibold text-inherit">
                                     {{ $log->user?->name ?? __('messages.activity_log.guest') }}
                                 </div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">
+                                <div class="text-xs text-inherit">
                                     {{ $log->user?->email }}
                                 </div>
                             </td>
@@ -89,25 +89,25 @@
                                 @php
                                     $actionColors = [
                                         'login' => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300',
-                                        'logout' => 'bg-gray-100 text-gray-700 dark:bg-gray-700/50 dark:text-gray-300',
+                                        'logout' => 'bg-gray-100 text-gray-950 dark:bg-gray-700/50 dark:text-white',
                                         'borrow_create' => 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300',
                                         'borrow_return' => 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300',
                                         'borrow_approve' => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300',
                                         'borrow_reject' => 'bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300',
                                     ];
                                 @endphp
-                                <span class="table-pill {{ $actionColors[$log->action] ?? 'bg-gray-100 text-gray-700 dark:bg-gray-700/50 dark:text-gray-300' }}">
+                                <span class="table-pill {{ $actionColors[$log->action] ?? 'bg-gray-100 text-gray-950 dark:bg-gray-700/50 dark:text-white' }}">
                                     {{ __('messages.activity_log.actions.' . $log->action) ?? $log->action }}
                                 </span>
                             </td>
-                            <td class="text-gray-600 dark:text-gray-300">
+                            <td class="text-inherit">
                                 @if($log->subject_type && $log->subject_id)
                                     {{ class_basename($log->subject_type) }} #{{ $log->subject_id }}
                                 @else
                                     -
                                 @endif
                             </td>
-                            <td class="text-gray-600 dark:text-gray-300">
+                            <td class="text-inherit">
                                 {{ $log->ip_address }}
                             </td>
                             <td class="text-right">

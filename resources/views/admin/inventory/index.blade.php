@@ -59,8 +59,8 @@
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                     @forelse($logs as $log)
                     <tr>
-                        <td class="text-gray-600 dark:text-gray-300">{{ $log->action_date->format('d/m/Y') }}</td>
-                        <td class="font-semibold text-gray-900 dark:text-white">{{ $log->equipment->name }}</td>
+                        <td class="text-inherit">{{ $log->action_date->format('d/m/Y') }}</td>
+                        <td class="font-semibold text-inherit">{{ $log->equipment->name }}</td>
                         <td>
                             <span class="table-pill {{ $log->type === 'increase' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300' : 'bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300' }}">
                                 {{ $log->type === 'increase' ? __('messages.inventory.increase') : __('messages.inventory.decrease') }}
@@ -69,8 +69,8 @@
                         <td class="font-semibold {{ $log->type === 'increase' ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400' }}">
                             {{ $log->type === 'increase' ? '+' : '-' }}{{ $log->quantity }}
                         </td>
-                        <td class="text-gray-600 dark:text-gray-300">{{ $log->reason }}</td>
-                        <td class="text-gray-600 dark:text-gray-300">{{ $log->performer?->name ?? '-' }}</td>
+                        <td class="text-inherit">{{ $log->reason }}</td>
+                        <td class="text-inherit">{{ $log->performer?->name ?? '-' }}</td>
                     </tr>
                     @empty
                     <tr>

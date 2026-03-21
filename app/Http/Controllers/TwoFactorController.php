@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\ActivityLogger;
 use App\Services\TwoFactorService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -157,6 +158,7 @@ class TwoFactorController extends Controller
         Auth::login($user, session('2fa:remember', false));
         session()->forget('2fa:remember');
         $request->session()->regenerate();
+        ActivityLogger::logLogin();
 
         return redirect()->intended(route('dashboard'));
     }

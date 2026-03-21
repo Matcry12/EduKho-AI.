@@ -5,7 +5,7 @@
 @section('content')
 <div class="space-y-6">
     <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{{ __('messages.damage_report.title') }}</h2>
+        <h2 class="text-2xl font-bold text-inherit">{{ __('messages.damage_report.title') }}</h2>
         <a href="{{ route('admin.damage-reports.create') }}" class="btn-primary">{{ __('messages.damage_report.create') }}</a>
     </div>
 
@@ -50,7 +50,7 @@
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
         <form method="GET" class="flex flex-wrap gap-4">
             <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('messages.status') }}</label>
+                <label class="block text-sm font-medium text-inherit mb-1">{{ __('messages.status') }}</label>
                 <select name="status" class="form-input text-sm" onchange="this.form.submit()">
                     <option value="">{{ __('messages.damage_report.all') }}</option>
                     <option value="reported" {{ request('status') === 'reported' ? 'selected' : '' }}>{{ __('messages.damage_report.reported') }}</option>
@@ -60,7 +60,7 @@
                 </select>
             </div>
             <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('messages.damage_report.severity') }}</label>
+                <label class="block text-sm font-medium text-inherit mb-1">{{ __('messages.damage_report.severity') }}</label>
                 <select name="severity" class="form-input text-sm" onchange="this.form.submit()">
                     <option value="">{{ __('messages.damage_report.all') }}</option>
                     <option value="minor" {{ request('severity') === 'minor' ? 'selected' : '' }}>{{ __('messages.damage_report.minor') }}</option>
@@ -76,24 +76,24 @@
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead class="bg-gray-50 dark:bg-gray-900">
                 <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ __('messages.damage_report.code') }}</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ __('messages.damage_report.equipment') }}</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ __('messages.damage_report.incident_date') }}</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ __('messages.damage_report.severity') }}</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ __('messages.damage_report.estimated_cost') }}</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ __('messages.status') }}</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-inherit uppercase">{{ __('messages.damage_report.code') }}</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-inherit uppercase">{{ __('messages.damage_report.equipment') }}</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-inherit uppercase">{{ __('messages.damage_report.incident_date') }}</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-inherit uppercase">{{ __('messages.damage_report.severity') }}</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-inherit uppercase">{{ __('messages.damage_report.estimated_cost') }}</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-inherit uppercase">{{ __('messages.status') }}</th>
                     <th class="px-6 py-3"></th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                 @forelse($reports as $report)
                 <tr>
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900 dark:text-gray-100">#{{ $report->id }}</td>
+                    <td class="px-6 py-4 text-sm font-medium text-inherit">#{{ $report->id }}</td>
                     <td class="px-6 py-4">
-                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ $report->equipmentItem->equipment->name }}</div>
-                        <div class="text-xs text-gray-500 dark:text-gray-400">{{ $report->equipmentItem->specific_code }}</div>
+                        <div class="text-sm font-medium text-inherit">{{ $report->equipmentItem->equipment->name }}</div>
+                        <div class="text-xs text-inherit">{{ $report->equipmentItem->specific_code }}</div>
                     </td>
-                    <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
+                    <td class="px-6 py-4 text-sm text-inherit">
                         {{ $report->incident_date->format('d/m/Y') }}
                     </td>
                     <td class="px-6 py-4">
@@ -106,7 +106,7 @@
                             {{ $report->severity_label }}
                         </span>
                     </td>
-                    <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
+                    <td class="px-6 py-4 text-sm text-inherit">
                         {{ $report->estimated_cost ? number_format($report->estimated_cost) . ' VND' : '-' }}
                     </td>
                     <td class="px-6 py-4">
@@ -114,7 +114,7 @@
                             @if($report->status === 'reported') bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300
                             @elseif($report->status === 'investigating') bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300
                             @elseif($report->status === 'resolved') bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300
-                            @else bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300
+                            @else bg-gray-100 text-gray-950 dark:bg-gray-700 dark:text-white
                             @endif">
                             {{ $report->status_label }}
                         </span>
@@ -125,8 +125,8 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7" class="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
-                        <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <td colspan="7" class="px-6 py-12 text-center text-inherit">
+                        <svg class="mx-auto h-12 w-12 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                         <p class="mt-2">{{ __('messages.damage_report.no_reports') }}</p>

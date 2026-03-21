@@ -22,36 +22,36 @@
         <div class="card-body">
             <dl class="grid gap-6 sm:grid-cols-2">
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Thiet bi</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $transfer->equipmentItem->equipment->name }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Thiet bi</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $transfer->equipmentItem->equipment->name }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Ma ca the</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $transfer->equipmentItem->specific_code }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Ma ca the</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $transfer->equipmentItem->specific_code }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Phong cu</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $transfer->fromRoom?->name ?? 'Chua gan phong' }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Phong cu</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $transfer->fromRoom?->name ?? 'Chua gan phong' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Phong moi</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $transfer->toRoom?->name ?? 'Chua gan phong' }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Phong moi</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $transfer->toRoom?->name ?? 'Chua gan phong' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Trang thai hien tai</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ ucfirst($transfer->equipmentItem->status) }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Trang thai hien tai</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ ucfirst($transfer->equipmentItem->status) }}</dd>
                 </div>
                 <div>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Nguoi thuc hien</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $transfer->transferredBy->name }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Nguoi thuc hien</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $transfer->transferredBy->name }}</dd>
                 </div>
                 <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Ly do</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $transfer->reason ?: 'Khong co ly do bo sung.' }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Ly do</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $transfer->reason ?: 'Khong co ly do bo sung.' }}</dd>
                 </div>
                 <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Ghi chu</dt>
-                    <dd class="mt-1 text-sm text-gray-900 dark:text-gray-100">{{ $transfer->notes ?: 'Khong co ghi chu.' }}</dd>
+                    <dt class="text-sm font-medium text-inherit">Ghi chu</dt>
+                    <dd class="mt-1 text-sm text-inherit">{{ $transfer->notes ?: 'Khong co ghi chu.' }}</dd>
                 </div>
             </dl>
         </div>

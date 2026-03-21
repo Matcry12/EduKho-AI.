@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Services\AI\AiServiceManager;
@@ -26,6 +27,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Force HTTPS when APP_URL uses https (behind reverse proxy / Cloudflare Tunnel)
+        if (str_starts_with(config('app.url'), 'https://')) {
+            URL::forceScheme('https');
+        }
+
         // Use Tailwind CSS pagination
         Paginator::useTailwind();
 
@@ -37,6 +43,11 @@ class AppServiceProvider extends ServiceProvider
         // Rate limiting for password reset attempts
         RateLimiter::for('password-reset', function (Request $request) {
             return Limit::perMinute(3)->by($request->input('email') . '|' . $request->ip());
+        });
+
+        // Rate limiting for 2FA challenge verification attempts
+        RateLimiter::for('two-factor', function (Request $request) {
+            return Limit::perMinute(5)->by((string) $request->session()->get('2fa:user_id') . '|' . $request->ip());
         });
     }
 }

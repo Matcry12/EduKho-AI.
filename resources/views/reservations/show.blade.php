@@ -91,34 +91,34 @@
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up" style="animation-delay: 140ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.reservation.info') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.reservation.info') }}</h3>
                 <dl class="space-y-3">
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.reservation.reserved_date') }}:</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $reservation->reserved_date->format('d/m/Y') }}</dd>
+                        <dt class="text-inherit">{{ __('messages.reservation.reserved_date') }}:</dt>
+                        <dd class="font-medium text-inherit">{{ $reservation->reserved_date->format('d/m/Y') }}</dd>
                     </div>
                     @if($reservation->period)
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.reservation.period') }}:</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ __('messages.borrow.period') }} {{ $reservation->period }}</dd>
+                        <dt class="text-inherit">{{ __('messages.reservation.period') }}:</dt>
+                        <dd class="font-medium text-inherit">{{ __('messages.borrow.period') }} {{ $reservation->period }}</dd>
                     </div>
                     @endif
                     @if($reservation->class_name)
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.reservation.class') }}:</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $reservation->class_name }}</dd>
+                        <dt class="text-inherit">{{ __('messages.reservation.class') }}:</dt>
+                        <dd class="font-medium text-inherit">{{ $reservation->class_name }}</dd>
                     </div>
                     @endif
                     @if($reservation->subject)
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.reservation.subject') }}:</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $reservation->subject }}</dd>
+                        <dt class="text-inherit">{{ __('messages.reservation.subject') }}:</dt>
+                        <dd class="font-medium text-inherit">{{ $reservation->subject }}</dd>
                     </div>
                     @endif
                     @if($reservation->lesson_name)
                     <div class="flex justify-between gap-3">
-                        <dt class="text-gray-500 dark:text-gray-400">{{ __('messages.reservation.lesson') }}:</dt>
-                        <dd class="font-medium text-gray-900 dark:text-gray-100">{{ $reservation->lesson_name }}</dd>
+                        <dt class="text-inherit">{{ __('messages.reservation.lesson') }}:</dt>
+                        <dd class="font-medium text-inherit">{{ $reservation->lesson_name }}</dd>
                     </div>
                     @endif
                 </dl>
@@ -127,7 +127,7 @@
 
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.equipment.title') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.equipment.title') }}</h3>
                 <div class="flex items-start gap-4">
                     <div class="rounded-xl bg-cyan-100 dark:bg-cyan-900/35 p-3">
                         <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,9 +135,9 @@
                         </svg>
                     </div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 dark:text-gray-100">{{ $reservation->equipment->name }}</h4>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.equipment.code') }}: {{ $reservation->equipment->base_code }}</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('messages.reservation.quantity') }}: {{ $reservation->quantity }} {{ $reservation->equipment->unit }}</p>
+                        <h4 class="font-semibold text-inherit">{{ $reservation->equipment->name }}</h4>
+                        <p class="text-sm text-inherit">{{ __('messages.equipment.code') }}: {{ $reservation->equipment->base_code }}</p>
+                        <p class="text-sm text-inherit">{{ __('messages.reservation.quantity') }}: {{ $reservation->quantity }} {{ $reservation->equipment->unit }}</p>
                         <a href="{{ route('equipment.show', $reservation->equipment) }}" class="text-sm font-semibold text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200 mt-2 inline-block">{{ __('messages.reservation.view_equipment') }}</a>
                     </div>
                 </div>
@@ -148,16 +148,16 @@
     <section class="grid grid-cols-1 gap-6 animate-fade-in-up" style="animation-delay: 180ms;">
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.reservation.reserver') }}</h3>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.reservation.reserver') }}</h3>
                 <div class="flex items-center gap-4">
                     <div class="rounded-full p-3 bg-gray-100 dark:bg-gray-800">
-                        <svg class="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                     </div>
                     <div>
-                        <p class="font-medium text-gray-900 dark:text-gray-100">{{ $reservation->user->name }}</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ $reservation->user->email }}</p>
+                        <p class="font-medium text-inherit">{{ $reservation->user->name }}</p>
+                        <p class="text-sm text-inherit">{{ $reservation->user->email }}</p>
                     </div>
                 </div>
             </div>
@@ -166,8 +166,8 @@
         @if($reservation->notes)
         <article class="card">
             <div class="card-body">
-                <h3 class="font-display text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ __('messages.note') }}</h3>
-                <p class="text-gray-700 dark:text-gray-300">{{ $reservation->notes }}</p>
+                <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.note') }}</h3>
+                <p class="text-inherit">{{ $reservation->notes }}</p>
             </div>
         </article>
         @endif
