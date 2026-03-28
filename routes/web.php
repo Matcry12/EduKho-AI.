@@ -268,3 +268,30 @@ Route::middleware('auth')->group(function () {
         });
     });
 });
+
+// Temporary migration route for Render deployment (REMOVE AFTER USE!)
+if (app()->environment('production') && !file_exists(storage_path('app/.migrations_done'))) {
+    Route::get('/run-migrations-' . env('APP_KEY_HASH', 'secure'), function () {
+        try {
+            // Run migrations
+            \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+            
+            // Run seeders
+            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+            
+            // Create marker file
+            file_put_contents(storage_path('app/.migrations_done'), date('Y-m-d H:i:s'));
+            
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Database initialized successfully!',
+                'timestamp' => now()->toDateTimeString()
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], 500);
+        }
+    });
+}
