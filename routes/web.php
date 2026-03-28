@@ -39,6 +39,26 @@ use Illuminate\Support\Facades\Route;
 
 // Public routes
 Route::get('/', function () {
+    // TEMPORARY: Initialize database on first visit
+    if (app()->environment('production') && !file_exists(storage_path('app/.migrations_done'))) {
+        try {
+            \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+            file_put_contents(storage_path('app/.migrations_done'), date('Y-m-d H:i:s'));
+            
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Database initialized successfully! Redirecting to login...',
+                'redirect' => route('login')
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Database initialization failed: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+    
     return redirect()->route('login');
 });
 

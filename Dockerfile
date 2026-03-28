@@ -71,6 +71,9 @@ RUN mkdir -p /var/www/storage/logs && \
     chown -R www-data:www-data /var/www/storage && \
     chown -R www-data:www-data /var/www/bootstrap/cache
 
+# Clear all Laravel caches to prevent stale cache issues
+RUN php artisan optimize:clear || true
+
 # Expose port 10000 for Render
 EXPOSE 10000
 
