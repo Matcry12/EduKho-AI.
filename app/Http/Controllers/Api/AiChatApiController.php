@@ -18,11 +18,15 @@ class AiChatApiController extends Controller
     {
         $validated = $request->validate([
             'message' => 'required|string|max:1000',
+            'history' => 'nullable|array|max:8',
+            'history.*.role' => 'required_with:history|string|in:user,ai',
+            'history.*.content' => 'required_with:history|string|max:1000',
         ]);
 
         $result = $this->aiService->processBookingRequest(
             $validated['message'],
-            Auth::user()
+            Auth::user(),
+            $validated['history'] ?? []
         );
 
         if ($result['success']) {

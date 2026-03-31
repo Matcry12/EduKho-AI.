@@ -1,214 +1,267 @@
 # KỊCH BẢN VIDEO DEMO SẢN PHẨM
 
-## EDUEQUIP PRO - HỆ THỐNG QUẢN LÝ THIẾT BỊ DẠY HỌC THÔNG MINH
+## EDUKHO-AI - DEMO DỄ QUAY TRÊN WEBSITE
 
-**Thời lượng:** 5-7 phút  
-**Định dạng:** 1920x1080 (Full HD)  
-**Ngôn ngữ:** Tiếng Việt
-
----
-
-### PHÂN CẢNH 1: GIỚI THIỆU (0:00 - 0:30)
-
-**[Hình ảnh]** Logo EduEquip Pro với slogan "Số hóa thiết bị - Nâng tầm giáo dục"
-
-**[Lời dẫn]**
-"Xin chào! Đây là EduEquip Pro - Giải pháp quản lý thiết bị dạy học thông minh đầu tiên tại Việt Nam tích hợp AI. 
-
-Hãy cùng khám phá cách EduEquip Pro đang thay đổi cách thức quản lý thiết bị tại Trường PTDTNT ATK Sơn Dương và nhiều trường khác!"
-
-**[Hiệu ứng]** Chuyển cảnh mượt với âm thanh công nghệ
+**Mục tiêu:** Demo ngắn, rõ, dễ quay trực tiếp trên website  
+**Thời lượng đề xuất:** 4-5 phút  
+**Định dạng:** 1920x1080  
+**Ngôn ngữ:** Tiếng Việt  
+**Phong cách:** Quay màn hình + lời thuyết minh đơn giản, không phụ thuộc tình huống thực tế khó tái hiện
 
 ---
 
-### PHÂN CẢNH 2: VẤN ĐỀ THỰC TẾ (0:30 - 1:00)
+## 1. ĐỊNH HƯỚNG CHUNG
 
-**[Hình ảnh]** 
-- Cận cảnh sổ sách mượn trả cũ, chồng chất
-- Giáo viên đang lục tìm thiết bị trong tủ
-- Đồng hồ tua nhanh thể hiện mất thời gian
+Video này không cần quay cảnh thực tế tại trường, không cần phỏng vấn, không cần quét QR ngoài đời thật.
 
-**[Lời dẫn]**
-"Trước đây, việc quản lý hàng nghìn thiết bị dạy học là thách thức lớn:
-- Mất 15-20 phút để tìm một thiết bị
-- Sổ sách thủ công dễ sai sót
-- Khó kiểm soát thiết bị quan trọng
-- Báo cáo tốn hàng ngày làm việc"
+Chỉ cần quay các thao tác có sẵn trên website:
+- Đăng nhập
+- Xem dashboard
+- Tìm thiết bị
+- Tạo phiếu mượn
+- Dùng AI chat
+- Xem khu vực quản trị
+- Xem báo cáo
 
----
-
-### PHÂN CẢNH 3: GIẢI PHÁP AI THÔNG MINH (1:00 - 2:30)
-
-**[Demo thực tế]** Màn hình máy tính với giao diện EduEquip Pro
-
-**Bước 1: AI Chatbot tìm kiếm**
-- **[Thao tác]** Click vào icon chat
-- **[Gõ]** "Tôi cần thiết bị dạy bài quang hợp"
-- **[Kết quả]** AI trả lời với danh sách thiết bị phù hợp
-
-**[Lời dẫn]**
-"Với AI Assistant, giáo viên chỉ cần nói theo cách tự nhiên. AI sẽ hiểu và gợi ý thiết bị phù hợp trong vài giây!"
-
-**Bước 2: Tạo phiếu mượn nhanh**
-- **[Thao tác]** Click "Mượn ngay" từ kết quả AI
-- **[Hiển thị]** Form điền tự động
-- **[Click]** Gửi yêu cầu
-
-**[Lời dẫn]**
-"Chỉ 3 click - phiếu mượn được tạo và duyệt tự động cho thiết bị thông thường!"
+Mục tiêu là để ban giám khảo nhìn thấy:
+- Hệ thống có giao diện thật
+- Có luồng nghiệp vụ rõ ràng
+- Có AI hỗ trợ
+- Có quản trị và báo cáo
 
 ---
 
-### PHÂN CẢNH 4: KIỂM SOÁT AN NINH (2:30 - 3:30)
+## 2. KỊCH BẢN CHI TIẾT THEO TỪNG CẢNH
 
-**[Hình ảnh]** Thiết bị QPAN được đánh dấu đặc biệt
+### CẢNH 1: MỞ ĐẦU
+**Thời lượng:** 0:00 - 0:20
 
-**[Demo]** 
-- Chọn thiết bị an ninh cao
-- Hiển thị quy trình phê duyệt đa cấp
-- Thông báo gửi đến admin
+**Hình ảnh quay:**
+- Mở trang đăng nhập hoặc trang chủ hệ thống
+- Hiển thị logo, tên hệ thống, giao diện tổng thể
 
-**[Lời dẫn]**
-"Với thiết bị nhạy cảm như thiết bị QPAN, hệ thống tự động kích hoạt quy trình phê duyệt chặt chẽ, đảm bảo an toàn tuyệt đối."
-
----
-
-### PHÂN CẢNH 5: KIỂM KÊ THÔNG MINH (3:30 - 4:30)
-
-**[Hình ảnh thực tế]** 
-- Cán bộ đang quét QR code trên thiết bị
-- Màn hình điện thoại hiển thị thông tin
-
-**[Demo kiểm kê]**
-- Quét 5-6 thiết bị liên tiếp
-- Dashboard cập nhật real-time
-- Xuất báo cáo tức thì
-
-**[Lời dẫn]**
-"Kiểm kê hàng trăm thiết bị giờ chỉ mất 1 giờ thay vì cả ngày. Mọi thứ được cập nhật tức thì!"
+**Lời dẫn gợi ý:**
+"Xin chào ban giám khảo. Đây là EduKho-AI, hệ thống hỗ trợ quản lý thiết bị dạy học trên nền tảng web. Sản phẩm giúp nhà trường quản lý thiết bị tập trung, hỗ trợ giáo viên mượn thiết bị thuận tiện, và hỗ trợ cán bộ quản trị theo dõi tình trạng sử dụng thiết bị."
 
 ---
 
-### PHÂN CẢNH 6: BÁO CÁO VÀ THỐNG KÊ (4:30 - 5:30)
+### CẢNH 2: ĐĂNG NHẬP VÀO HỆ THỐNG
+**Thời lượng:** 0:20 - 0:40
 
-**[Màn hình]** Dashboard với biểu đồ đẹp mắt
+**Hình ảnh quay:**
+- Nhập tài khoản demo
+- Bấm đăng nhập
+- Chuyển vào dashboard
 
-**[Demo]**
-- Biểu đồ tròn: Tỷ lệ sử dụng theo môn
-- Biểu đồ cột: Top thiết bị được mượn
-- Xuất báo cáo Excel chuẩn Bộ
+**Lời dẫn gợi ý:**
+"Người dùng đăng nhập vào hệ thống bằng tài khoản được phân quyền sẵn. Sau khi đăng nhập, hệ thống đưa người dùng tới trang tổng quan."
 
-**[Lời dẫn]**
-"Ban giám hiệu có thể theo dõi mọi thứ qua dashboard trực quan. Báo cáo chuẩn Bộ GD&ĐT được tạo tự động!"
-
----
-
-### PHÂN CẢNH 7: KẾT QUẢ THỰC TẾ (5:30 - 6:30)
-
-**[Hình ảnh]** Giáo viên và học sinh đang sử dụng thiết bị
-
-**[Infographic hiển thị]**
-- Tiết kiệm 85% thời gian
-- Tăng 200% hiệu quả sử dụng
-- 0% sai sót quản lý
-- 100% hài lòng
-
-**[Phỏng vấn nhanh]**
-- GV: "Giờ tôi có nhiều thời gian hơn cho học sinh"
-- HS: "Em được dùng nhiều thiết bị thí nghiệm hơn"
+**Lưu ý quay:**
+- Dùng tài khoản demo ổn định
+- Không nhập quá nhanh
 
 ---
 
-### PHÂN CẢNH 8: KẾT THÚC & CTA (6:30 - 7:00)
+### CẢNH 3: TRANG TỔNG QUAN DASHBOARD
+**Thời lượng:** 0:40 - 1:10
 
-**[Hình ảnh]** Logo với thông tin liên hệ
+**Hình ảnh quay:**
+- Cuộn nhẹ dashboard
+- Chỉ vào các thẻ thống kê, biểu đồ, số liệu tổng quan
 
-**[Lời dẫn]**
-"EduEquip Pro - Giải pháp quản lý thiết bị dạy học thông minh cho mọi trường học.
-
-🌐 Truy cập: eduequip.edu.vn
-📧 Email: support@eduequip.edu.vn
-📞 Hotline: 1900-xxxx
-
-Hãy cùng chúng tôi số hóa giáo dục Việt Nam!"
-
-**[Hiệu ứng]** Fade out với nhạc nền tích cực
+**Lời dẫn gợi ý:**
+"Tại dashboard, người dùng có thể quan sát nhanh số lượng thiết bị, tình trạng sử dụng, các hoạt động gần đây và một số thống kê cơ bản. Điều này giúp cán bộ phụ trách nắm tình hình toàn bộ kho thiết bị trên một màn hình."
 
 ---
 
-## HƯỚNG DẪN KỸ THUẬT
+### CẢNH 4: TRA CỨU DANH SÁCH THIẾT BỊ
+**Thời lượng:** 1:10 - 1:50
 
-### Phần mềm quay/dựng:
-- OBS Studio: Quay màn hình
-- DaVinci Resolve: Dựng video
-- Canva: Tạo graphics
+**Hình ảnh quay:**
+- Vào menu `Thiết bị`
+- Tìm kiếm một thiết bị cụ thể
+- Mở chi tiết thiết bị
+- Kéo nhẹ để cho thấy thông tin mô tả, số lượng, trạng thái
 
-### Checklist quay video:
+**Lời dẫn gợi ý:**
+"Tại phân hệ thiết bị, người dùng có thể tra cứu nhanh theo tên thiết bị, bộ môn hoặc vị trí lưu trữ. Mỗi thiết bị đều có thông tin chi tiết như tên, mã thiết bị, nhóm môn học, số lượng và trạng thái sử dụng."
 
-**Chuẩn bị:**
-- [ ] Tạo dữ liệu demo đầy đủ
-- [ ] Kiểm tra kết nối internet ổn định
-- [ ] Chuẩn bị micro thu âm tốt
-- [ ] Tắt thông báo trên máy
-
-**Khi quay:**
-- [ ] Độ phân giải 1920x1080
-- [ ] FPS: 30 hoặc 60
-- [ ] Zoom vào phần quan trọng
-- [ ] Thao tác chậm, rõ ràng
-
-**Hậu kỳ:**
-- [ ] Thêm subtitle tiếng Việt
-- [ ] Nhạc nền nhẹ nhàng
-- [ ] Logo góc video
-- [ ] Export MP4 chất lượng cao
-
-### Lời dẫn gợi ý (Voice over):
-
-Giọng đọc: Chuyên nghiệp, thân thiện, tốc độ vừa phải
-
-Có thể điều chỉnh lời dẫn cho phù hợp với người đọc, nhưng giữ nguyên ý chính.
+**Câu nói ngắn trên màn hình nếu cần:**
+- "Tra cứu thiết bị nhanh"
+- "Thông tin tập trung, dễ theo dõi"
 
 ---
 
-## PHỤ LỤC: NỘI DUNG TEXT/GRAPHICS
+### CẢNH 5: TẠO PHIẾU MƯỢN THIẾT BỊ
+**Thời lượng:** 1:50 - 2:35
 
-### Slide 1 - Tiêu đề:
-```
-EDUEQUIP PRO
-Hệ thống quản lý thiết bị dạy học thông minh
-Tích hợp AI đầu tiên tại Việt Nam
-```
+**Hình ảnh quay:**
+- Vào `Phiếu mượn`
+- Chọn tạo phiếu mới
+- Điền một số thông tin cơ bản
+- Chọn thiết bị
+- Bấm tạo phiếu
 
-### Slide 2 - Thống kê:
-```
-TRƯỚC KHI CÓ EDUEQUIP PRO:
-⏱️ 20 phút tìm 1 thiết bị
-📝 100% thủ công
-❌ 5-10% sai sót
-😓 Quá tải công việc
+**Lời dẫn gợi ý:**
+"Giáo viên có thể tạo phiếu mượn trực tiếp trên hệ thống. Việc số hóa phiếu mượn giúp giảm ghi chép thủ công, hạn chế sai sót, và giúp nhà trường dễ dàng tra cứu lịch sử sử dụng thiết bị."
+
+**Nếu hệ thống có bước duyệt:**
+"Sau khi tạo, phiếu mượn sẽ được chuyển theo quy trình xử lý phù hợp với từng loại thiết bị."
+
+---
+
+### CẢNH 6: DEMO AI CHAT HỖ TRỢ NGƯỜI DÙNG
+**Thời lượng:** 2:35 - 3:15
+
+**Hình ảnh quay:**
+- Mở `Trợ lý AI`
+- Gõ câu đơn giản, dễ thành công
+
+**Nên dùng 1 trong các câu sau để demo:**
+- "Mượn kính hiển vi cho tiết 2 sáng mai"
+- "Kiểm tra còn bao nhiêu bộ thực hành"
+- "Mượn máy chiếu cho lớp 11A3 tiết 5"
+
+**Lời dẫn gợi ý:**
+"Một điểm nổi bật của hệ thống là trợ lý AI hỗ trợ giáo viên nhập yêu cầu theo ngôn ngữ tự nhiên. AI giúp gợi ý hoặc hỗ trợ điền nhanh thông tin mượn thiết bị, từ đó rút ngắn thao tác trên hệ thống."
+
+**Lưu ý rất quan trọng:**
+- Chỉ demo bằng câu ngắn, rõ nghĩa
+- Không dùng câu quá dài hoặc quá phức tạp
+- Nếu AI trả lời tốt, dừng ở mức giới thiệu hỗ trợ, không cần hứa hẹn quá nhiều
+
+---
+
+### CẢNH 7: PHÂN HỆ QUẢN TRỊ
+**Thời lượng:** 3:15 - 3:50
+
+**Hình ảnh quay:**
+- Vào nhóm menu `Quản trị`
+- Mở nhanh các mục như:
+  - Phòng/Kho
+  - Tài khoản
+  - Tổ chuyên môn
+  - Báo cáo hư hỏng hoặc bảo trì
+
+**Lời dẫn gợi ý:**
+"Ngoài chức năng dành cho giáo viên, hệ thống còn có khu vực quản trị để quản lý phòng kho, tài khoản người dùng, tổ chuyên môn, cũng như theo dõi các vấn đề phát sinh như hư hỏng hoặc bảo trì thiết bị."
+
+---
+
+### CẢNH 8: BÁO CÁO VÀ KẾT THÚC
+**Thời lượng:** 3:50 - 4:30
+
+**Hình ảnh quay:**
+- Vào `Báo cáo`
+- Hiển thị một số biểu đồ hoặc bảng thống kê
+- Quay lại góc nhìn tổng thể của hệ thống
+
+**Lời dẫn gợi ý:**
+"Từ dữ liệu được lưu trữ tập trung, hệ thống hỗ trợ tổng hợp báo cáo nhanh, giúp cán bộ quản lý dễ theo dõi tình trạng thiết bị và quá trình sử dụng. EduKho-AI hướng tới mục tiêu hỗ trợ nhà trường quản lý thiết bị dạy học thuận tiện, trực quan và hiệu quả hơn."
+
+**Câu kết ngắn:**
+"Xin trân trọng cảm ơn ban giám khảo đã theo dõi phần demo sản phẩm."
+
+---
+
+## 3. KỊCH BẢN SIÊU NGẮN NẾU CẦN QUAY GẤP
+
+Nếu không đủ thời gian, chỉ cần quay 5 bước sau:
+
+1. Đăng nhập
+2. Dashboard
+3. Danh sách thiết bị
+4. Tạo phiếu mượn
+5. AI chat + báo cáo
+
+**Thời lượng bản rút gọn:** 2-3 phút
+
+---
+
+## 4. CÂU CHAT NÊN DÙNG KHI DEMO
+
+Ưu tiên dùng các câu đơn giản sau:
+
+```text
+Mượn kính hiển vi cho tiết 2 sáng mai
 ```
 
-### Slide 3 - Kết quả:
-```
-SAU KHI DÙNG EDUEQUIP PRO:
-⚡ 30 giây với AI
-🤖 100% tự động
-✅ 0.1% sai sót  
-😊 Tiết kiệm 30h/tháng
+```text
+Kiểm tra còn bao nhiêu bộ thực hành
 ```
 
-### Slide 4 - Testimonial:
+```text
+Mượn máy chiếu cho lớp 11A3 tiết 5
 ```
-"AI giúp tôi tìm thiết bị ngay lập tức.
-Không còn mất thời gian lục tủ!"
-- Cô Nguyễn Thị Lan, GV Vật lý
 
-"Kiểm soát thiết bị QPAN chưa bao giờ
-chặt chẽ đến vậy!"
-- Thầy Lương Việt Đức, Hiệu trưởng
-```
+Không nên dùng:
+- Câu quá dài
+- Câu có nhiều ý cùng lúc
+- Câu hỏi ngoài phạm vi mượn thiết bị
+- Tình huống khó xác minh ngay trên dữ liệu demo
 
 ---
 
-Video demo này sẽ giúp người xem hiểu rõ sức mạnh của EduEquip Pro trong 7 phút!
+## 5. HƯỚNG DẪN QUAY ĐỂ ÍT LỖI
+
+### Trước khi quay
+- Đăng nhập sẵn và kiểm tra dữ liệu demo
+- Mở sẵn các trang cần quay ở tab gần nhau
+- Tắt thông báo máy tính
+- Phóng to trình duyệt khoảng 110% đến 125%
+- Chuẩn bị lời dẫn ngắn, không đọc quá nhanh
+
+### Khi quay
+- Di chuột chậm
+- Cuộn trang chậm
+- Mỗi thao tác dừng 1-2 giây
+- Không mở quá nhiều chức năng trong một cảnh
+- Nếu một thao tác dễ lỗi, quay riêng từng đoạn rồi ghép lại
+
+### Khi dựng
+- Có thể thêm tiêu đề ngắn ở đầu mỗi cảnh
+- Có thể thêm phụ đề
+- Không cần quá nhiều hiệu ứng
+- Ưu tiên rõ nội dung hơn là cầu kỳ
+
+---
+
+## 6. MẪU LỜI DẪN LIÊN TỤC 1 MẠCH
+
+Nếu muốn đọc liền một mạch, có thể dùng bản sau:
+
+"Đây là EduKho-AI, hệ thống hỗ trợ quản lý thiết bị dạy học trên nền tảng web. Sau khi đăng nhập, người dùng có thể theo dõi tổng quan tại dashboard. Tại phân hệ thiết bị, người dùng tra cứu nhanh thông tin thiết bị theo tên, nhóm môn học và trạng thái sử dụng. Giáo viên có thể tạo phiếu mượn trực tiếp trên hệ thống, giúp giảm thao tác thủ công và thuận tiện hơn trong quá trình quản lý. Bên cạnh đó, trợ lý AI hỗ trợ nhập yêu cầu bằng ngôn ngữ tự nhiên để gợi ý thao tác nhanh hơn. Ở khu vực quản trị, nhà trường có thể quản lý phòng kho, tài khoản, tổ chuyên môn và theo dõi báo cáo liên quan đến thiết bị. Từ dữ liệu tập trung trên hệ thống, việc tổng hợp và theo dõi tình trạng thiết bị trở nên trực quan và thuận tiện hơn. Xin trân trọng cảm ơn ban giám khảo."
+
+---
+
+## 7. GỢI Ý THAO TÁC THỰC TẾ KHI BẠN QUAY
+
+Thứ tự tab nên chuẩn bị:
+
+1. Trang đăng nhập
+2. Dashboard
+3. Thiết bị
+4. Phiếu mượn
+5. Trợ lý AI
+6. Quản trị
+7. Báo cáo
+
+Như vậy khi quay bạn chỉ cần:
+- chuyển tab
+- thao tác nhẹ
+- không cần xử lý tình huống phát sinh ngoài đời thật
+
+---
+
+## 8. KẾT LUẬN
+
+Kịch bản này được viết theo hướng:
+- Dễ quay
+- Dễ nói
+- Dễ thành công khi demo
+- Tập trung vào những gì website đã có
+
+Nếu cần, có thể tiếp tục viết thêm:
+- bản lời dẫn ngắn đúng 3 phút
+- bản lời dẫn trang trọng hơn để đi thi
+- shot list từng cú quay để bạn chỉ việc bấm record

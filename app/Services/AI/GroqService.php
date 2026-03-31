@@ -37,7 +37,7 @@ class GroqService implements LlmServiceInterface
     /**
      * Xử lý yêu cầu đặt lịch mượn từ ngôn ngữ tự nhiên
      */
-    public function processBookingRequest(string $userMessage, User $teacher): array
+    public function processBookingRequest(string $userMessage, User $teacher, array $conversationHistory = []): array
     {
         $startTime = microtime(true);
 
@@ -52,7 +52,7 @@ class GroqService implements LlmServiceInterface
                 $teacher->name
             );
 
-            $response = $this->callGroqApi($systemPrompt, $userMessage);
+            $response = $this->callGroqApi($systemPrompt, $userMessage, $conversationHistory);
 
             $parsed = $this->parseAiResponse($response);
 
@@ -109,8 +109,24 @@ class GroqService implements LlmServiceInterface
     /**
      * Gọi Groq API (OpenAI-compatible format)
      */
-    private function callGroqApi(string $systemPrompt, string $userMessage): string
+    private function callGroqApi(string $systemPrompt, string $userMessage, array $conversationHistory = []): string
     {
+        $messages = [
+            [
+                'role' => 'system',
+                'content' => $systemPrompt,
+            ],
+        ];
+
+        foreach ($this->normalizeConversationHistory($conversationHistory) as $message) {
+            $messages[] = $message;
+        }
+
+        $messages[] = [
+            'role' => 'user',
+            'content' => $userMessage,
+        ];
+
         $response = Http::timeout($this->timeoutSeconds)
             ->withHeaders([
                 'Authorization' => "Bearer {$this->apiKey}",
@@ -118,18 +134,9 @@ class GroqService implements LlmServiceInterface
             ])
             ->post("{$this->baseUrl}/chat/completions", [
                 'model' => $this->model,
-                'messages' => [
-                    [
-                        'role' => 'system',
-                        'content' => $systemPrompt,
-                    ],
-                    [
-                        'role' => 'user',
-                        'content' => $userMessage,
-                    ],
-                ],
-                'temperature' => 0.1,
-                'top_p' => 0.8,
+                'messages' => $messages,
+                'temperature' => 0.25,
+                'top_p' => 0.9,
                 'max_tokens' => 1024,
                 'response_format' => ['type' => 'json_object'],
             ]);
@@ -223,6 +230,21 @@ class GroqService implements LlmServiceInterface
     private function getRooms(): array
     {
         return \App\Models\Room::all(['id', 'name', 'type'])->toArray();
+    }
+
+    private function normalizeConversationHistory(array $conversationHistory): array
+    {
+        return collect($conversationHistory)
+            ->take(-8)
+            ->map(function (array $message) {
+                return [
+                    'role' => ($message['role'] ?? 'user') === 'ai' ? 'assistant' : 'user',
+                    'content' => trim((string) ($message['content'] ?? '')),
+                ];
+            })
+            ->filter(fn (array $message) => $message['content'] !== '')
+            ->values()
+            ->all();
     }
 
     private function logInteraction(

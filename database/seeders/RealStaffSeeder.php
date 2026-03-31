@@ -7,6 +7,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 
 class RealStaffSeeder extends Seeder
 {
@@ -14,9 +15,13 @@ class RealStaffSeeder extends Seeder
     {
         // Lấy các tổ chuyên môn
         $departments = Department::pluck('id', 'name');
+        $userColumns = array_flip(Schema::getColumnListing('users'));
 
         // Danh sách nhân sự thực tế
         $staffData = [
+            // Demo admin account
+            ['stt' => 0, 'department' => 'VĂN PHÒNG', 'name' => 'Admin Demo', 'dob' => '1/1/1990', 'career_start' => '1/1/2020', 'gender' => 'Nam', 'ethnicity' => 'Kinh', 'specialization' => 'Quản trị hệ thống', 'degree' => 'Đại học', 'is_party_member' => false, 'political_theory' => null, 'it_cert' => 'Tin học CB', 'language_cert' => 'Anh B1', 'ethnic_lang' => null, 'position' => 'Quản trị hệ thống', 'rank' => null, 'phone' => '0900000000', 'email' => 'admin@truong.edu.vn', 'role' => 'admin'],
+
             // KHTN
             ['stt' => 1, 'department' => 'KHTN', 'name' => 'LƯƠNG VIỆT ĐỨC', 'dob' => '2/1/1984', 'career_start' => '1/9/2006', 'gender' => 'Nam', 'ethnicity' => 'Kinh', 'specialization' => 'Hóa học', 'degree' => 'Thạc sĩ', 'is_party_member' => true, 'political_theory' => 'Cao cấp', 'it_cert' => 'Tin học CB', 'language_cert' => 'Anh B1', 'ethnic_lang' => 'Mông', 'position' => 'Hiệu trưởng', 'rank' => 'Hạng 2/THPT', 'phone' => '091 5962015', 'email' => 'Lvduc.gv08@tuyenquang.edu.vn', 'role' => 'admin'],
             ['stt' => 2, 'department' => 'KHTN', 'name' => 'TRỊNH XUÂN BẢO', 'dob' => '6/3/1982', 'career_start' => '1/9/2005', 'gender' => 'Nam', 'ethnicity' => 'Kinh', 'specialization' => 'Vật lí', 'degree' => 'Thạc sĩ', 'is_party_member' => true, 'political_theory' => 'Trung cấp', 'it_cert' => 'Tin học CB', 'language_cert' => 'Anh B1', 'ethnic_lang' => 'Mông', 'position' => 'Phó Hiệu trưởng', 'rank' => 'Hạng 2/THPT', 'phone' => '936836382', 'email' => 'txbao0382@tuyenquang.edu.vn', 'role' => 'admin'],
@@ -78,7 +83,7 @@ class RealStaffSeeder extends Seeder
 
             User::updateOrCreate(
                 ['email' => strtolower($staff['email'])],
-                [
+                $this->filterUserDataBySchema([
                     'name' => $staff['name'],
                     'password' => Hash::make('password'),
                     'role' => $role,
@@ -99,7 +104,7 @@ class RealStaffSeeder extends Seeder
                     'civil_servant_rank' => $staff['rank'] ?? null,
                     'phone' => $staff['phone'],
                     'notes' => null,
-                ]
+                ], $userColumns)
             );
         }
 
@@ -126,5 +131,14 @@ class RealStaffSeeder extends Seeder
         }
         
         return null;
+    }
+
+    private function filterUserDataBySchema(array $data, array $userColumns): array
+    {
+        return array_filter(
+            $data,
+            fn ($value, $key) => array_key_exists($key, $userColumns),
+            ARRAY_FILTER_USE_BOTH
+        );
     }
 }

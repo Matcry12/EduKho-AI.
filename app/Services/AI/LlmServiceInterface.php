@@ -9,5 +9,5 @@ use App\Models\User;
  */
 interface LlmServiceInterface
 {
-    public function processBookingRequest(string $userMessage, User $teacher): array;
+    public function processBookingRequest(string $userMessage, User $teacher, array $conversationHistory = []): array;
 }

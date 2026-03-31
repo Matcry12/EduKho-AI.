@@ -132,7 +132,13 @@ function aiChat() {
                         'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': '{{ csrf_token() }}',
                     },
-                    body: JSON.stringify({ message: userMessage }),
+                    body: JSON.stringify({
+                        message: userMessage,
+                        history: this.messages.slice(-8).map((msg) => ({
+                            role: msg.role,
+                            content: msg.content,
+                        })),
+                    }),
                 });
 
                 const data = await response.json();

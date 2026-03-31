@@ -42,7 +42,7 @@ class GeminiService implements LlmServiceInterface
      * @param User $teacher - Giáo viên đang chat
      * @return array - Kết quả parse (hoặc fallback signal)
      */
-    public function processBookingRequest(string $userMessage, User $teacher): array
+    public function processBookingRequest(string $userMessage, User $teacher, array $conversationHistory = []): array
     {
         $startTime = microtime(true);
 
@@ -60,7 +60,7 @@ class GeminiService implements LlmServiceInterface
             );
 
             // 3. Gọi Gemini API
-            $response = $this->callGeminiApi($systemPrompt, $userMessage);
+            $response = $this->callGeminiApi($systemPrompt, $userMessage, $conversationHistory);
 
             // 4. Parse JSON từ response
             $parsed = $this->parseAiResponse($response);
@@ -122,7 +122,7 @@ class GeminiService implements LlmServiceInterface
     /**
      * Gọi Gemini API
      */
-    private function callGeminiApi(string $systemPrompt, string $userMessage): string
+    private function callGeminiApi(string $systemPrompt, string $userMessage, array $conversationHistory = []): string
     {
         $url = "{$this->baseUrl}/models/{$this->model}:generateContent?key={$this->apiKey}";
 
@@ -133,18 +133,10 @@ class GeminiService implements LlmServiceInterface
                     'text' => $systemPrompt
                 ]
             ],
-            'contents' => [
-                [
-                    'parts' => [
-                        [
-                            'text' => $userMessage
-                        ]
-                    ]
-                ]
-            ],
+            'contents' => $this->buildContents($conversationHistory, $userMessage),
             'generationConfig' => [
-                'temperature' => 0.1,
-                'topP' => 0.8,
+                'temperature' => 0.25,
+                'topP' => 0.9,
                 'maxOutputTokens' => 1024,
                 'responseMimeType' => 'application/json',
             ],
@@ -274,6 +266,42 @@ class GeminiService implements LlmServiceInterface
     private function getRooms(): array
     {
         return Room::all(['id', 'name', 'type'])->toArray();
+    }
+
+    private function buildContents(array $conversationHistory, string $userMessage): array
+    {
+        $contents = collect($conversationHistory)
+            ->take(-8)
+            ->map(function (array $message) {
+                $content = trim((string) ($message['content'] ?? ''));
+
+                if ($content === '') {
+                    return null;
+                }
+
+                return [
+                    'role' => ($message['role'] ?? 'user') === 'ai' ? 'model' : 'user',
+                    'parts' => [
+                        [
+                            'text' => $content,
+                        ],
+                    ],
+                ];
+            })
+            ->filter()
+            ->values()
+            ->all();
+
+        $contents[] = [
+            'role' => 'user',
+            'parts' => [
+                [
+                    'text' => $userMessage,
+                ],
+            ],
+        ];
+
+        return $contents;
     }
 
     /**

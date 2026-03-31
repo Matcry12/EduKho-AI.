@@ -45,7 +45,7 @@ class AiServiceManager implements LlmServiceInterface
     /**
      * Xử lý yêu cầu: thử provider chính, nếu lỗi thử fallback
      */
-    public function processBookingRequest(string $userMessage, User $teacher): array
+    public function processBookingRequest(string $userMessage, User $teacher, array $conversationHistory = []): array
     {
         // Không có provider nào được cấu hình
         if (!$this->primary) {
@@ -60,7 +60,7 @@ class AiServiceManager implements LlmServiceInterface
         }
 
         // Thử provider chính
-        $result = $this->primary->processBookingRequest($userMessage, $teacher);
+        $result = $this->primary->processBookingRequest($userMessage, $teacher, $conversationHistory);
 
         // Nếu thành công hoặc không có fallback → trả kết quả
         if ($result['success'] || !$this->fallback) {
@@ -72,7 +72,7 @@ class AiServiceManager implements LlmServiceInterface
             'primary_error' => $result['error_code'] ?? 'unknown',
         ]);
 
-        $fallbackResult = $this->fallback->processBookingRequest($userMessage, $teacher);
+        $fallbackResult = $this->fallback->processBookingRequest($userMessage, $teacher, $conversationHistory);
 
         if ($fallbackResult['success']) {
             $fallbackResult['used_fallback'] = true;

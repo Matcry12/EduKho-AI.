@@ -34,11 +34,15 @@ class AiChatController extends Controller
     {
         $validated = $request->validate([
             'message' => 'required|string|max:1000',
+            'history' => 'nullable|array|max:8',
+            'history.*.role' => 'required_with:history|string|in:user,ai',
+            'history.*.content' => 'required_with:history|string|max:1000',
         ]);
 
         $result = $this->aiService->processBookingRequest(
             $validated['message'],
-            Auth::user()
+            Auth::user(),
+            $validated['history'] ?? []
         );
 
         if ($result['success']) {
@@ -50,6 +54,7 @@ class AiChatController extends Controller
                 'need_more_info' => $this->handleNeedMoreInfo($data),
                 'suggest_alternative' => $this->handleSuggestAlternative($data),
                 'query_stock' => $this->handleQueryStock($data),
+                'general_answer' => $this->handleGeneralAnswer($data),
                 'rejected' => $this->handleRejected($data),
                 default => response()->json([
                     'success' => false,
@@ -122,6 +127,15 @@ class AiChatController extends Controller
             'success' => true,
             'intent' => 'query_stock',
             'message' => $data['message'],
+        ]);
+    }
+
+    private function handleGeneralAnswer(array $data): \Illuminate\Http\JsonResponse
+    {
+        return response()->json([
+            'success' => true,
+            'intent' => 'general_answer',
+            'message' => $data['message'] ?? 'Em chưa có đủ thông tin để hỗ trợ chính xác.',
         ]);
     }
 
