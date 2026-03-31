@@ -8,7 +8,6 @@ use App\Models\EquipmentItem;
 use App\Models\Room;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,46 +19,56 @@ class DatabaseSeeder extends Seeder
         // 1. TỔ CHUYÊN MÔN
         // ══════════════════════════════════════════════
         $departments = [
-            ['name' => 'KHTN'], // Khoa học tự nhiên
-            ['name' => 'T-A-TI-TC-QP'], // Toán-Anh-Tin-Thể chất-QPAN
-            ['name' => 'KHXH'], // Khoa học xã hội  
-            ['name' => 'VĂN PHÒNG'], // Văn phòng
+            ['name' => 'KHTN'],
+            ['name' => 'T-A-TI-TC-QP'],
+            ['name' => 'KHXH'],
+            ['name' => 'VĂN PHÒNG'],
         ];
 
         foreach ($departments as $dept) {
-            Department::create($dept);
+            Department::firstOrCreate(['name' => $dept['name']]);
         }
 
         // ══════════════════════════════════════════════
         // 2. TÀI KHOẢN NGƯỜI DÙNG
         // ══════════════════════════════════════════════
-        // Tạo nhân sự thực tế từ danh sách 41 người (bao gồm 3 admin)
         $this->call(RealStaffSeeder::class);
+
+        $admin = User::where('email', 'admin@truong.edu.vn')->first();
 
         // ══════════════════════════════════════════════
         // 3. PHÒNG HỌC / KHO
         // ══════════════════════════════════════════════
         $rooms = [
-            ['name' => 'Kho Tổng', 'type' => 'warehouse', 'manager_id' => 1, 'location' => 'Tầng 1, Dãy A'],
-            ['name' => 'Kho QPAN', 'type' => 'warehouse', 'manager_id' => 1, 'location' => 'Tầng 1, Dãy C'],
-            ['name' => 'Phòng TH Vật lý', 'type' => 'lab', 'manager_id' => 2, 'location' => 'Tầng 2, Dãy B', 'capacity' => 40],
-            ['name' => 'Phòng TH Hóa học', 'type' => 'lab', 'manager_id' => 3, 'location' => 'Tầng 2, Dãy B', 'capacity' => 40],
-            ['name' => 'Phòng TH Sinh học', 'type' => 'lab', 'manager_id' => 6, 'location' => 'Tầng 3, Dãy B', 'capacity' => 40],
-            ['name' => 'Phòng Tin học', 'type' => 'lab', 'manager_id' => 4, 'location' => 'Tầng 3, Dãy A', 'capacity' => 45],
+            ['name' => 'Kho Tổng', 'type' => 'warehouse', 'manager_email' => $admin?->email ?? 'admin@truong.edu.vn', 'location' => 'Tầng 1, Dãy A'],
+            ['name' => 'Kho QPAN', 'type' => 'warehouse', 'manager_email' => $admin?->email ?? 'admin@truong.edu.vn', 'location' => 'Tầng 1, Dãy C'],
+            ['name' => 'Phòng TH Vật lý', 'type' => 'lab', 'manager_email' => 'lan.tran@truong.edu.vn', 'location' => 'Tầng 2, Dãy B', 'capacity' => 40],
+            ['name' => 'Phòng TH Hóa học', 'type' => 'lab', 'manager_email' => 'hung.pham@truong.edu.vn', 'location' => 'Tầng 2, Dãy B', 'capacity' => 40],
+            ['name' => 'Phòng TH Sinh học', 'type' => 'lab', 'manager_email' => 'hoa.hoang@truong.edu.vn', 'location' => 'Tầng 3, Dãy B', 'capacity' => 40],
+            ['name' => 'Phòng Tin học', 'type' => 'lab', 'manager_email' => 'mai.le@truong.edu.vn', 'location' => 'Tầng 3, Dãy A', 'capacity' => 45],
         ];
 
         foreach ($rooms as $room) {
-            Room::create($room);
+            $manager = User::where('email', $room['manager_email'])->first();
+
+            Room::updateOrCreate(
+                ['name' => $room['name']],
+                [
+                    'type' => $room['type'],
+                    'manager_id' => $manager?->id,
+                    'location' => $room['location'],
+                    'capacity' => $room['capacity'] ?? null,
+                ]
+            );
         }
 
         // ══════════════════════════════════════════════
         // 4. DANH MỤC THIẾT BỊ + CÁ THỂ
         // ══════════════════════════════════════════════
-        // Tạo thiết bị từ biểu kiểm kê thực tế
         $this->call(RealEquipmentSeeder::class);
 
         $this->command->info('✅ Seeded: ' . Department::count() . ' tổ chuyên môn');
-        $this->command->info('✅ Seeded: ' . User::count() . ' tài khoản (1 admin + ' . (User::count() - 1) . ' GV)');
+        $this->command->info('✅ Seeded: ' . User::count() . ' tài khoản');
         $this->command->info('✅ Seeded: ' . Room::count() . ' phòng/kho');
         $this->command->info('✅ Seeded: ' . Equipment::count() . ' danh mục thiết bị');
         $this->command->info('✅ Seeded: ' . EquipmentItem::count() . ' cá thể vật lý');

@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Department;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Carbon\Carbon;
 
 class RealStaffSeeder extends Seeder
 {
@@ -75,30 +75,32 @@ class RealStaffSeeder extends Seeder
             
             // Xác định vai trò
             $role = $staff['role'] ?? 'teacher';
-            
-            User::create([
-                'name' => $staff['name'],
-                'email' => strtolower($staff['email']),
-                'password' => Hash::make('password'),
-                'role' => $role,
-                'department_id' => $departments[$staff['department']] ?? null,
-                'email_verified_at' => now(),
-                'date_of_birth' => $dob,
-                'career_start_date' => $careerStart,
-                'gender' => $staff['gender'],
-                'ethnicity' => $staff['ethnicity'],
-                'specialization' => $staff['specialization'],
-                'degree' => $staff['degree'],
-                'is_party_member' => $staff['is_party_member'],
-                'political_theory_cert' => $staff['political_theory'] ?? null,
-                'position' => $staff['position'] ?? null,
-                'it_certificate' => $staff['it_cert'] ?? null,
-                'language_certificate' => $staff['language_cert'] ?? null,
-                'ethnic_language_cert' => $staff['ethnic_lang'] ?? null,
-                'civil_servant_rank' => $staff['rank'] ?? null,
-                'phone' => $staff['phone'],
-                'notes' => null,
-            ]);
+
+            User::updateOrCreate(
+                ['email' => strtolower($staff['email'])],
+                [
+                    'name' => $staff['name'],
+                    'password' => Hash::make('password'),
+                    'role' => $role,
+                    'department_id' => $departments[$staff['department']] ?? null,
+                    'email_verified_at' => now(),
+                    'date_of_birth' => $dob,
+                    'career_start_date' => $careerStart,
+                    'gender' => $staff['gender'],
+                    'ethnicity' => $staff['ethnicity'],
+                    'specialization' => $staff['specialization'],
+                    'degree' => $staff['degree'],
+                    'is_party_member' => $staff['is_party_member'],
+                    'political_theory_cert' => $staff['political_theory'] ?? null,
+                    'position' => $staff['position'] ?? null,
+                    'it_certificate' => $staff['it_cert'] ?? null,
+                    'language_certificate' => $staff['language_cert'] ?? null,
+                    'ethnic_language_cert' => $staff['ethnic_lang'] ?? null,
+                    'civil_servant_rank' => $staff['rank'] ?? null,
+                    'phone' => $staff['phone'],
+                    'notes' => null,
+                ]
+            );
         }
 
         $this->command->info('✅ Đã tạo ' . count($staffData) . ' nhân sự với thông tin chi tiết từ dữ liệu thực tế');

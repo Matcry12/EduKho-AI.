@@ -477,21 +477,23 @@ class RealEquipmentSeeder extends Seeder
         // Tạo thiết bị và cá thể
         foreach ($equipments as $eq) {
             $room = $rooms->get($eq['room']) ?: $rooms->first();
-            
-            $equipment = Equipment::create([
-                'name' => $eq['name'],
-                'base_code' => $eq['base_code'],
-                'unit' => $eq['unit'],
-                'price' => $eq['price'],
-                'category_subject' => $eq['category_subject'],
-                'grade_level' => $eq['grade_level'],
-                'security_level' => $eq['security_level'],
-                'description' => $eq['description'] ?? null,
-                'is_digital' => false,
-                'file_url' => null,
-                'file_type' => null,
-                'file_size' => null
-            ]);
+
+            $equipment = Equipment::updateOrCreate(
+                ['base_code' => $eq['base_code']],
+                [
+                    'name' => $eq['name'],
+                    'unit' => $eq['unit'],
+                    'price' => $eq['price'],
+                    'category_subject' => $eq['category_subject'],
+                    'grade_level' => $eq['grade_level'],
+                    'security_level' => $eq['security_level'],
+                    'description' => $eq['description'] ?? null,
+                    'is_digital' => false,
+                    'file_url' => null,
+                    'file_type' => null,
+                    'file_size' => null,
+                ]
+            );
 
             // Tạo cá thể vật lý cho thiết bị
             for ($i = 1; $i <= $eq['quantity']; $i++) {
@@ -501,13 +503,15 @@ class RealEquipmentSeeder extends Seeder
                     $status = 'maintenance';
                 }
                 
-                EquipmentItem::create([
-                    'equipment_id' => $equipment->id,
-                    'room_id' => $room->id,
-                    'specific_code' => $equipment->base_code . '.' . str_pad($i, 3, '0', STR_PAD_LEFT),
-                    'status' => $status,
-                    'year_acquired' => rand(2020, 2024),
-                ]);
+                EquipmentItem::firstOrCreate(
+                    ['specific_code' => $equipment->base_code . '.' . str_pad($i, 3, '0', STR_PAD_LEFT)],
+                    [
+                        'equipment_id' => $equipment->id,
+                        'room_id' => $room?->id,
+                        'status' => $status,
+                        'year_acquired' => rand(2020, 2024),
+                    ]
+                );
             }
         }
 

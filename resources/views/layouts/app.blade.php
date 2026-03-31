@@ -19,7 +19,7 @@
 <body class="app-shell font-sans antialiased" x-data="{ sidebarOpen: false }">
     <div class="min-h-screen flex">
         <!-- Sidebar -->
-        <aside class="fixed inset-y-0 left-0 z-50 w-64 gradient-sidebar transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 sidebar-scroll overflow-y-auto"
+        <aside class="fixed inset-y-0 left-0 z-50 flex h-screen w-64 flex-col gradient-sidebar transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 lg:h-screen overflow-hidden"
                :class="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }">
 
             <!-- Logo Area -->
@@ -35,16 +35,17 @@
                 </div>
             </div>
 
-            <nav class="mt-6 px-3 space-y-1 pb-20">
-                <a href="{{ route('dashboard') }}"
-                   class="sidebar-nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    <div class="p-1.5 rounded-lg bg-gradient-to-br from-sky-500/20 to-teal-500/20 mr-3">
-                        <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                        </svg>
-                    </div>
-                    <span class="font-medium">Dashboard</span>
-                </a>
+            <div class="sidebar-scroll min-h-0 flex-1 overflow-y-auto px-3 pb-6">
+                <nav class="mt-6 space-y-1">
+                    <a href="{{ route('dashboard') }}"
+                       class="sidebar-nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                        <div class="p-1.5 rounded-lg bg-gradient-to-br from-sky-500/20 to-teal-500/20 mr-3">
+                            <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                        <span class="font-medium">Dashboard</span>
+                    </a>
 
                 <a href="{{ route('equipment.index') }}"
                    class="sidebar-nav-item {{ request()->routeIs('equipment.*') ? 'active' : '' }}">
@@ -207,10 +208,11 @@
                     </a>
                 </div>
                 @endif
-            </nav>
+                </nav>
+            </div>
 
             <!-- Sidebar Footer -->
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900/50 to-transparent">
+            <div class="shrink-0 p-4 bg-gradient-to-t from-slate-900/50 to-transparent border-t border-white/10">
                 <div class="flex items-center space-x-3 px-3 py-2">
                     <div class="avatar-ring">
                         <div class="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-sky-600 flex items-center justify-center">
